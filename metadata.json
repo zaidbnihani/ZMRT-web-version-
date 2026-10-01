@@ -1,7 +1,7 @@
 {
-  "name": "ZMRT",
-  "description": "ZMRT — تطبيق التواصل والمكالمات الصوتية والمرئية. تواصل، تحدّث، وكن أقرب.",
-  "prompt": "ZMRT — Web version of communication and voice/video calling application",
+  "name": "ZMRT — Privacy Policy & Terms of Service",
+  "description": "Official Privacy Policy and Terms of Service for ZMRT application. Read our legal agreement, data handling practices, and terms of use.",
+  "prompt": "ZMRT — Privacy Policy and Terms of Service in English at root route",
   "permissions": [],
   "capabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Stats collection: Public read, allow updates/writes for stats counters
+    match /stats/{statId} {
+      allow read: if true;
+      allow create, update: if true;
+    }
+
+    // Reviews collection: Public read, create, update (likes), delete
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.resource.data.name is string 
+                    && request.resource.data.name.size() > 0 
+                    && request.resource.data.name.size() <= 100
+                    && request.resource.data.text is string 
+                    && request.resource.data.text.size() > 0 
+                    && request.resource.data.text.size() <= 1000
+                    && request.resource.data.rating is number;
+      allow update, delete: if true;
+    }
+  }
+}

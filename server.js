@@ -142,7 +142,33 @@ app.post('/api/comments/:id/like', (req, res) => {
   res.json({ success: true, likes: comment.likes });
 });
 
+// API: Delete a comment
+app.delete('/api/comments/:id', (req, res) => {
+  const commentId = req.params.id;
+  const store = getStore();
+  const initialLength = (store.comments || []).length;
+  store.comments = (store.comments || []).filter(c => c.id !== commentId);
+  if (store.comments.length === initialLength) {
+    return res.status(404).json({ success: false, error: 'التعليق غير موجود' });
+  }
+  saveStore(store);
+  res.json({ success: true, message: 'تم حذف التعليق بنجاح' });
+});
+
 // API: Get & increment downloads
+app.get('/api/firebase-config', (req, res) => {
+  try {
+    const configPath = path.join(__dirname, 'firebase-applet-config.json');
+    if (fs.existsSync(configPath)) {
+      const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      return res.json({ success: true, config });
+    }
+  } catch (err) {
+    console.error('Error reading firebase config:', err);
+  }
+  res.status(404).json({ success: false, error: 'Firebase config not found' });
+});
+
 app.get('/api/downloads', (req, res) => {
   const store = getStore();
   res.json({ success: true, downloads: store.downloads || 12840 });
@@ -163,9 +189,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Explicit route for ZMRT.html
+// Explicit route for Privacy Policy & Terms full page
+app.get(['/سياسة%20الخصوصية.html', '/سياسة الخصوصية.html', '/privacy.html', '/terms.html', '/privacy-policy.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'سياسة الخصوصية.html'));
+});
+
+// Explicit route for ZMRT.html (redirect to root)
 app.get('/ZMRT.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'ZMRT.html'));
+  res.redirect(301, '/');
 });
 
 app.listen(PORT, HOST, () => {

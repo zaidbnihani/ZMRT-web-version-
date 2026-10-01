@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#080e0c">
+  <meta name="description" content="ZMRT — وثيقة سياسة الخصوصية وشروط الاستخدام الرسمية لتطبيق ZMRT.">
+  <title>ZMRT — سياسة الخصوصية وشروط الاستخدام</title>
+  <meta property="og:title" content="ZMRT — سياسة الخصوصية وشروط الاستخدام">
+  <meta property="og:description" content="السياسة الرسمية وحماية البيانات وشروط الاستخدام لتطبيق ZMRT على أندرويد.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23080e0c'/%3E%3Cpath d='M18 20h28L18 44h28' fill='none' stroke='%23ccf77a' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+  
+  <style>
+    :root {
+      --bg: #080e0c;
+      --text: #eaf5ec;
+      --muted: #9ab3a8;
+      --accent: #ccf77a;
+      --accent-soft: rgba(204, 247, 122, 0.12);
+      --font: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.9; }
+    body { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); position: relative; overflow-x: hidden; font-family: var(--font); padding: 20px 20px 40px; }
+
+    /* Subtle Ambient Background */
+    .site-background { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; background: #080e0c; }
+    .ambient-glow { position: absolute; width: min(85vw, 900px); height: min(85vw, 900px); border-radius: 50%; filter: blur(80px); opacity: .25; will-change: transform; animation: ambientDrift 24s ease-in-out infinite alternate; background: radial-gradient(circle, rgba(92,160,75,.3), transparent 67%); top: -20%; left: -10%; }
+    @keyframes ambientDrift { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px, -20px) scale(1.05); } 100% { transform: translate(-20px, 15px) scale(.98); } }
+    #connection-background { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .5; }
+
+    main { position: relative; z-index: 1; width: 100%; max-width: 800px; margin: 0 auto; }
+    svg { display: inline-block; vertical-align: middle; max-width: 100%; flex-shrink: 0; }
+
+    /* Site Name Brand Header on top of text */
+    .brand-header {
+      display: flex; align-items: center; margin-bottom: 24px; margin-right: auto; width: fit-content;
+    }
+    .brand-name { color: var(--text); font-weight: 800; font-size: 1.5rem; letter-spacing: 0.5px; }
+
+    /* Document Header */
+    .meta-header {
+      border-bottom: 1px solid rgba(204, 247, 122, 0.2); padding-bottom: 24px; margin-bottom: 40px; text-align: center;
+    }
+    .meta-header h1 { font-size: clamp(1.6rem, 4.8vw, 2.3rem); font-weight: 900; color: var(--accent); margin-bottom: 12px; font-family: var(--font); line-height: 1.35; }
+    .meta-header p { color: var(--muted); font-size: 0.95rem; font-weight: 500; }
+
+    /* Content Flow (Directly on the background with NO box/borders) */
+    .content-flow { display: flex; flex-direction: column; gap: 32px; }
+
+    /* Section styling */
+    .section-block { scroll-margin-top: 40px; }
+    .section-block h2 { font-size: 1.3rem; color: var(--accent); margin: 32px 0 14px; font-weight: 800; font-family: var(--font); display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(204, 247, 122, 0.1); padding-bottom: 8px; }
+    .section-block h3 { font-size: 1.1rem; color: var(--text); margin: 22px 0 8px; font-weight: 700; font-family: var(--font); }
+    .section-block p { color: #d8e6db; font-size: 1.01rem; margin-bottom: 14px; text-align: justify; line-height: 1.9; font-family: var(--font); }
+    .section-block ul { padding-right: 24px; margin-bottom: 18px; }
+    .section-block li { color: #d8e6db; font-size: 0.98rem; margin-bottom: 10px; line-height: 1.85; text-align: justify; font-family: var(--font); }
+    .section-block strong { color: var(--text); font-weight: 700; }
+
+    /* Divider separating documents */
+    .section-divider {
+      margin: 50px 0 30px; padding-top: 30px; border-top: 1px dashed rgba(204,247,122,0.25); text-align: center; font-weight: 900; color: var(--accent); font-size: 1.4rem; letter-spacing: 0.5px;
+    }
+
+    /* Simple Footer */
+    .simple-footer {
+      margin-top: 60px; padding-top: 24px; border-top: 1px solid rgba(204, 247, 122, 0.1); text-align: center; color: var(--muted); font-size: 0.88rem;
+    }
+    .simple-footer p { margin-bottom: 8px; }
+    .simple-footer a { color: var(--accent); text-decoration: none; font-weight: 700; }
+    .simple-footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Subtle Ambient Background -->
+  <div class="site-background" aria-hidden="true">
+    <div class="ambient-glow"></div>
+    <canvas id="connection-background"></canvas>
+  </div>
+
+  <main>
+    <!-- Brand Header (Site Name) -->
+    <div class="brand-header">
+      <span class="brand-name" dir="ltr">ZMRT</span>
+    </div>
+
+    <!-- Document Header -->
+    <header class="meta-header">
+      <h1>سياسة الخصوصية وشروط الاستخدام</h1>
+      <p>تطبيق التواصل الذكي والمكالمات عالية الجودة</p>
+    </header>
+
+    <!-- Content Flow -->
+    <div class="content-flow">
+
+      <!-- ================= PART 1: PRIVACY POLICY ================= -->
+      <section class="section-block">
+        <h2 style="margin-top: 0;">سياسة الخصوصية لتطبيق ZMRT</h2>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 24px;">آخر تحديث: 1 أكتوبر 2026</p>
+
+        <h3>1. نطاق السياسة</h3>
+        <p>توضح هذه السياسة كيفية التعامل مع المعلومات عند استخدام تطبيق ZMRT وخدماته المرتبطة، بما في ذلك معلومات الحساب، وبيانات الاتصال، وأذونات الجهاز، وحقوق المستخدم.</p>
+        <p>تعتمد البيانات التي تتم معالجتها على الميزات المتاحة في إصدار التطبيق والميزات التي يختار المستخدم تشغيلها.</p>
+
+        <h3>2. المعلومات التي نعالجها</h3>
+        
+        <strong>معلومات الحساب</strong>
+        <p>قد تشمل اسم العرض، واسم المستخدم، والبريد الإلكتروني أو رقم الهاتف المستخدم للتسجيل، وصورة الملف الشخصي، ومعرّف الحساب، وإإعدادات المستخدم.</p>
+        <p>تُستخدم هذه المعلومات لإنشاء الحساب، وتسجيل الدخول، وإدارة الملف الشخصي، وتمكين التواصل بين المستخدمين.</p>
+
+        <strong>بيانات المكالمات والتواصل</strong>
+        <p>عند استخدام ميزات الاتصال، قد تتم معالجة معرّفات أطراف الاتصال، ووقت المكالمة ومدتها وحالتها، والبيانات التقنية اللازمة لإنشاء الاتصال وتشخيص مشكلاته.</p>
+        <p>تتم معالجة الصوت والفيديو لتوفير المكالمة التي يبدأها المستخدم أو يوافق على استقبالها. ولا يُعد منح إذن الميكروفون أو الكاميرا موافقةً على تسجيل المكالمات؛ فأي ميزة تسجيل تتطلب إفصاحًا واضحًا وموافقة مناسبة وفق القانون.</p>
+        <p>إذا توفرت ميزات الرسائل أو مشاركة الملفات، تتم معالجة المحتوى الذي يرسله المستخدم بالقدر اللازم لتقديم هذه الميزات.</p>
+
+        <strong>الصور والملفات</strong>
+        <p>عندما يختار المستخدم صورة شخصية أو ملفًا لمشاركته، تتم معالجة العنصر المختار لتقديم الوظيفة المطلوبة.</p>
+
+        <strong>معلومات الجهاز والاتصال</strong>
+        <p>قد تتم معالجة عنوان IP، وإصدار نظام التشغيل والتطبيق، ونوع الجهاز، ورمز الإشعارات، وسجلات الأخطاء والبيانات التقنية اللازمة لتشغيل الخدمة وحمايتها وتحسين استقرارها.</p>
+
+        <h3>3. أذونات الجهاز وأسباب استخدامها</h3>
+        <p>يطلب التطبيق الأذونات المرتبطة بالميزات المتاحة، عند الحاجة إليها:</p>
+        <ul>
+          <li><strong>الإنترنت:</strong> لتسجيل الدخول، ومزامنة البيانات، وإجراء المكالمات والتواصل مع الخوادم.</li>
+          <li><strong>الميكروفون:</strong> لإرسال الصوت أثناء المكالمات والميزات الصوتية التي يفعّلها المستخدم.</li>
+          <li><strong>الكاميرا:</strong> لإجراء مكالمات الفيديو أو التقاط الصور عندما يختار المستخدم ذلك.</li>
+          <li><strong>الإشعارات:</strong> للتنبيه بالمكالمات الواردة والفائتة والرسائل وتحديثات الحساب.</li>
+          <li><strong>جهات الاتصال:</strong> إذا توفرت ميزة العثور على المعارف، لتسهيل اكتشاف الأشخاص والتواصل معهم بعد منح الإذن.</li>
+          <li><strong>الصور والفيديو والملفات:</strong> للوصول إلى العناصر التي يختار المستخدم استخدامها أو مشاركتها.</li>
+          <li><strong>Bluetooth:</strong> لاستخدام سماعات وأجهزة الصوت المتصلة أثناء المكالمات.</li>
+          <li><strong>الخدمات الأمامية:</strong> لاستمرار المكالمة النشطة مع إظهار إشعار مناسب وفق متطلبات Android.</li>
+          <li><strong>منع السكون:</strong> للمحافظة على العمليات الضرورية للمكالمة ومنع انقطاعها بسبب سكون الجهاز.</li>
+          <li><strong>الاهتزاز:</strong> للتنبيه بالمكالمات والإشعارات.</li>
+          <li><strong>عرض المكالمات بملء الشاشة:</strong> لإظهار المكالمة الواردة عندما تسمح إعدادات الجهاز ومتطلبات النظام بذلك.</li>
+        </ul>
+        <p>يمكن تعديل الأذونات من إعدادات الجهاز. وقد يؤدي رفض إذن إلى تعذر تشغيل الميزة التي تعتمد عليه.</p>
+        <p>لا تتم معالجة الموقع الجغرافي إلا عند توفير ميزة تحتاج إليه، مع توضيح الغرض وطلب الإذن المناسب قبل الوصول إليه.</p>
+
+        <h3>4. أغراض استخدام المعلومات</h3>
+        <p>تُستخدم المعلومات لتوفير وظائف التطبيق، وإدارة الحسابات، وإجراء الاتصالات، وتسليم الإشعارات، وتنفيذ طلبات المستخدم، وتقديم الدعم، وتشخيص الأعطال، وحماية الخدمة من الاحتيال وإساءة الاستخدام، والوفاء بالالتزامات القانونية المنطبقة.</p>
+
+        <h3>5. مشاركة المعلومات</h3>
+        <p>قد تظهر للمستخدمين الآخرين معلومات الملف الشخصي والمحتوى الذي يختار المستخدم مشاركته، بحسب طبيعة الميزة وإعداداتها.</p>
+        <p>قد تتم معالجة المعلومات بواسطة مزودي الخدمات التقنية اللازمين لتشغيل التطبيق، مثل خدمات المصادقة، والاستضافة، وقواعد البيانات، وتخزين الملفات، والإشعارات والاتصالات.</p>
+        <p>وقد يُفصح عن المعلومات بالقدر اللازم للاستجابة لالتزام قانوني صالح، أو حماية الحقوق وسلامة المستخدمين والخدمة.</p>
+
+        <h3>6. حماية المعلومات</h3>
+        <p>نتخذ تدابير تقنية وتنظيمية معقولة لحماية المعلومات من الوصول أو الاستخدام أو التعديل غير المصرح به. ومع ذلك، لا يمكن ضمان الأمان المطلق لأي خدمة إلكترونية.</p>
+
+        <h3>7. الاحتفاظ بالمعلومات</h3>
+        <p>يتم الاحتفاظ بالمعلومات للمدة اللازمة لتقديم الخدمة وتحقيق الأغراض الموضحة في هذه السياسة.</p>
+        <p>قد يُحتفظ ببعض المعلومات بعد إغلاق الحساب عندما يلزم ذلك للامتثال للقانون، أو معالجة النزاعات، أو منع الاحتيال، على أن يقتصر الاحتفاظ على المعلومات والمدة الضروريتين.</p>
+
+        <h3>8. حذف الحساب والبيانات</h3>
+        <p>يمكن للمستخدم طلب حذف حسابه والبيانات المرتبطة به من خلال خيار الحذف المتاح داخل التطبيق أو وسيلة طلب الحذف الرسمية المنشورة ضمن معلومات التطبيق.</p>
+        <p>قد نطلب التحقق من ملكية الحساب قبل تنفيذ الطلب. ويشمل الحذف البيانات المرتبطة بالحساب، باستثناء ما يلزم الاحتفاظ به لأسباب قانونية أو أمنية مشروعة.</p>
+        <p>قد تبقى الرسائل أو الملفات التي سبق مشاركتها ضمن حسابات المستلمين أو نسخهم الخاصة، بحسب طبيعة الميزة.</p>
+
+        <h3>9. حقوق المستخدم</h3>
+        <p>وفق القانون المنطبق، يمكن للمستخدم طلب الوصول إلى معلوماته، وتصحيحها، وحذفها، وسحب الموافقات التي تعتمد عليها المعالجة، أو الاعتراض على بعض استخداماتها.</p>
+        <p>يمكن تقديم هذه الطلبات عبر وسيلة الدعم الرسمية المنشورة في صفحة التطبيق. وقد يتطلب تنفيذها التحقق من الهوية.</p>
+
+        <h3>10. نقل المعلومات بين الدول</h3>
+        <p>قد تُعالج المعلومات في الدول التي يعمل فيها مزودو البنية التقنية. وعندما تنطبق متطلبات قانونية على نقل البيانات، تُراعى الضمانات المطلوبة بموجبها.</p>
+
+        <h3>11. الأطفال والقاصرون</h3>
+        <p>يجب الالتزام بالعمر المسموح لاستخدام التطبيق كما هو موضح في صفحة المتجر والقانون المحلي. وعندما يتطلب القانون موافقة ولي الأمر، يجب الحصول عليها قبل الاستخدام.</p>
+        <p>إذا تبيّن جمع معلومات طفل بصورة مخالفة للمتطلبات المنطبقة، تُتخذ الإجراءات المناسبة، بما فيها حذف المعلومات عند الحاجة.</p>
+
+        <h3>12. تحديث السياسة والتواصل</h3>
+        <p>قد تُحدّث هذه السياسة عند تغير ميزات التطبيق أو ممارسات معالجة المعلومات. ويُعدّل تاريخ التحديث، ويُبلّغ المستخدم بالتغييرات الجوهرية بالطريقة المناسبة.</p>
+        <p>للاستفسارات المتعلقة بالخصوصية أو لممارسة الحقوق، تُستخدم معلومات التواصل الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </section>
+
+      <!-- ================= PART 2: TERMS OF SERVICE ================= -->
+      <div class="section-divider">شروط استخدام تطبيق ZMRT</div>
+
+      <section class="section-block">
+        <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 24px;">آخر تحديث: 1 أكتوبر 2026</p>
+
+        <h3>1. قبول الشروط</h3>
+        <p>باستخدام ZMRT، يوافق المستخدم على هذه الشروط. ومن لا يوافق عليها يجب أن يتوقف عن استخدام الخدمة.</p>
+        <p>لا تُعد الموافقة على هذه الشروط بديلًا عن أي موافقة منفصلة يتطلبها القانون لمعالجة البيانات الشخصية.</p>
+
+        <h3>2. أهلية الاستخدام</h3>
+        <p>يجب أن يستوفي المستخدم متطلبات العمر والأهلية القانونية المنطبقة عليه. وإذا تطلب القانون موافقة ولي الأمر، يتحمل المستخدم وولي أمره مسؤولية الحصول عليها.</p>
+
+        <h3>3. حساب المستخدم</h3>
+        <p>يتحمل المستخدم مسؤولية صحة المعلومات المقدمة، وحماية بيانات الدخول، والأنشطة التي تتم من خلال حسابه، وإبلاغ الدعم عند اكتشاف وصول غير مصرح به.</p>
+        <p>يُحظر إنشاء حساب لانتحال شخصية شخص آخر أو تضليل المستخدمين.</p>
+
+        <h3>4. الاستخدام المقبول</h3>
+        <p>يُحظر استخدام التطبيق في:</p>
+        <ul>
+          <li>الاحتيال أو التهديد أو الابتزاز أو التحرش.</li>
+          <li>انتهاك خصوصية الآخرين أو نشر بياناتهم دون حق.</li>
+          <li>استغلال الأطفال أو تعريضهم للخطر.</li>
+          <li>إرسال محتوى غير قانوني أو ينتهك حقوق الآخرين.</li>
+          <li>نشر البرمجيات الضارة أو محاولة اختراق الحسابات والأنظمة.</li>
+          <li>إرسال اتصالات مزعجة أو آلية بصورة مسيئة.</li>
+          <li>تجاوز أنظمة الحماية أو تعطيل الخدمة.</li>
+          <li>أي نشاط يخالف القوانين المنطبقة.</li>
+        </ul>
+
+        <h3>5. محتوى المستخدم</h3>
+        <p>يبقى المستخدم مالكًا لحقوق محتواه، ويتحمل مسؤولية امتلاكه الحقوق والموافقات اللازمة لمشاركته.</p>
+        <p>يمنح المستخدم الخدمة الإذن التقني اللازم لمعالجة محتواه ونقله وتخزينه وعرضه بالقدر الضروري لتقديم الميزات التي يستخدمها، دون أن يؤدي ذلك إلى نقل ملكية المحتوى.</p>
+
+        <h3>6. المكالمات والتسجيل</h3>
+        <p>يتحمل المستخدم مسؤولية محتوى اتصالاته والتزامه بالقوانين المتعلقة بالمكالمات والتسجيل والخصوصية.</p>
+        <p>لا يجوز تسجيل الآخرين أو نشر اتصالاتهم دون الموافقات التي يتطلبها القانون.</p>
+
+        <h3>7. خدمات الطوارئ</h3>
+        <p>لا ينبغي الاعتماد على ZMRT كوسيلة للاتصال بخدمات الطوارئ. عند وجود حالة طارئة، يجب استخدام وسائل الاتصال الرسمية المتاحة في بلد المستخدم.</p>
+
+        <h3>8. تعليق الحساب أو إنهاؤه</h3>
+        <p>يجوز تقييد الحساب أو تعليقه أو إنهاؤه عند مخالفة هذه الشروط، أو إساءة استخدام الخدمة، أو تعريض المستخدمين أو الأنظمة للخطر، أو تنفيذ التزام قانوني.</p>
+        <p>تُراعي طبيعة المخالفة والقانون المنطبق عند اتخاذ الإجراء. ويمكن التواصل مع الدعم للاستفسار عن إجراءات الحساب.</p>
+
+        <h3>9. الملكية الفكرية</h3>
+        <p>تعود حقوق التطبيق وعلامته وتصميماته ومكوناته الأصلية إلى أصحابها. وتبقى حقوق مكونات الأطراف الخارجية لأصحابها وفق تراخيصها.</p>
+        <p>لا يجوز نسخ التطبيق أو إعادة توزيعه أو استغلال علامته دون تصريح، إلا بالقدر الذي يسمح به القانون أو الترخيص المنطبق.</p>
+
+        <h3>10. الخدمات الخارجية</h3>
+        <p>قد يعتمد التطبيق على خدمات تقدمها جهات خارجية، وقد تخضع هذه الخدمات لشروط وسياسات مستقلة. ويُحدد نطاق مسؤولية كل جهة وفق دورها والقانون المنطبق.</p>
+
+        <h3>11. توفر الخدمة وتعديلها</h3>
+        <p>قد تتأثر الخدمة بأعمال الصيانة، أو أعطال الشبكات والخوادم، أو تحديثات الأنظمة. ولا نضمن استمرار توفرها دون انقطاع.</p>
+        <p>قد تُضاف ميزات أو تُعدّل أو تُوقف، مع تقديم الإشعارات اللازمة عندما يفرض القانون ذلك أو يؤثر التغيير بصورة جوهرية على حقوق المستخدم.</p>
+
+        <h3>12. المسؤولية</h3>
+        <p>تُقدّم الخدمة وفق حالتها المتاحة، في الحدود التي يسمح بها القانون، دون ضمان خلوها التام من الأخطاء أو الانقطاعات.</p>
+        <p>لا تستبعد هذه الشروط المسؤولية عن الغش أو أي مسؤولية أو حقوق إلزامية لا يجوز استبعادها قانونًا. ويخضع أي تحديد للمسؤولية للحدود التي يجيزها القانون المنطبق.</p>
+
+        <h3>13. إنهاء الاستخدام</h3>
+        <p>يمكن للمستخدم التوقف عن استخدام التطبيق وطلب حذف حسابه وفق سياسة الخصوصية. وتظل الالتزامات التي يُقصد استمرارها بعد إنهاء الاستخدام سارية بالقدر الذي يسمح به القانون.</p>
+
+        <h3>14. القانون المنطبق</h3>
+        <p>تخضع هذه الشروط للقوانين المنطبقة على مقدم الخدمة والمستخدم، دون الانتقاص من حقوق المستهلك الإلزامية في بلد إقامته. وتُحال النزاعات إلى الجهات المختصة قانونًا.</p>
+
+        <h3>15. تحديث الشروط والتواصل</h3>
+        <p>قد تُحدّث هذه الشروط، ويُوضّح تاريخ آخر تحديث. ويُبلّغ المستخدم بالتغييرات الجوهرية عند الحاجة، وتُطلب الموافقة الجديدة إذا تطلب القانون ذلك.</p>
+        <p>للاستفسارات أو الشكاوى، تُستخدم معلومات الدعم الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </section>
+
+    </div>
+
+    <!-- Simple Footer -->
+    <footer class="simple-footer">
+      <p>© 2026 ZMRT. جميع الحقوق محفوظة.</p>
+      <p><a href="/">العودة إلى الصفحة الرئيسية لـ ZMRT</a></p>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      'use strict';
+
+      // Interactive Canvas Background
+      const canvas = document.getElementById('connection-background');
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          let width = canvas.width = window.innerWidth;
+          let height = canvas.height = window.innerHeight;
+          window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
+
+          const particles = Array.from({ length: 22 }, () => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.3,
+            vy: (Math.random() - 0.5) * 0.3,
+            radius: Math.random() * 2 + 1
+          }));
+
+          function animate() {
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = 'rgba(204, 247, 122, 0.2)';
+            ctx.strokeStyle = 'rgba(204, 247, 122, 0.05)';
+
+            particles.forEach((p, i) => {
+              p.x += p.vx; p.y += p.vy;
+              if (p.x < 0 || p.x > width) p.vx *= -1;
+              if (p.y < 0 || p.y > height) p.vy *= -1;
+
+              ctx.beginPath();
+              ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+              ctx.fill();
+
+              for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x, dy = p.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 140) {
+                  ctx.beginPath();
+                  ctx.moveTo(p.x, p.y);
+                  ctx.lineTo(p2.x, p2.y);
+                  ctx.stroke();
+                }
+              }
+            });
+            requestAnimationFrame(animate);
+          }
+          animate();
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

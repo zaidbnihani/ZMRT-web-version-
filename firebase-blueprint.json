@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "Stat": {
+      "title": "App Statistics",
+      "description": "Global application stats for downloads and ratings",
+      "type": "object",
+      "properties": {
+        "downloads": { "type": "number", "description": "Total download count" },
+        "totalReviews": { "type": "number", "description": "Total number of reviews" },
+        "averageRating": { "type": "number", "description": "Average rating score" },
+        "ratingCounts": { "type": "object", "description": "Distribution of 1-5 star ratings" }
+      },
+      "required": ["downloads", "totalReviews", "averageRating"]
+    },
+    "Review": {
+      "title": "User Review",
+      "description": "User feedback and rating submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 80, "description": "User name" },
+        "rating": { "type": "number", "description": "Star rating 1-5" },
+        "text": { "type": "string", "maxLength": 1000, "description": "Review comment text" },
+        "date": { "type": "string", "description": "Submission ISO date" },
+        "device": { "type": "string", "maxLength": 50, "description": "Device platform" },
+        "likes": { "type": "number", "description": "Like count" }
+      },
+      "required": ["name", "rating", "text", "date"]
+    }
+  },
+  "firestore": {
+    "/stats/{statId}": {
+      "schema": "Stat",
+      "description": "Global statistics document"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Collection of user reviews and ratings"
+    }
+  }
+}

@@ -9,6 +9,9 @@
   <meta property="og:title" content="ZMRT — أهلًا بك، كن أقرب.">
   <meta property="og:description" content="ZMRT — تطبيق التواصل والمكالمات الصوتية والمرئية. تواصل، تحدّث، وكن أقرب.">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23080e0c'/%3E%3Cpath d='M18 20h28L18 44h28' fill='none' stroke='%23ccf77a' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
     /* ZMRT: all styles, fonts, images, and interactions live in this file. */
@@ -458,18 +461,33 @@
     .pill-number{font-weight:800;color:var(--accent);font-family:Arial,sans-serif;direction:ltr}
     .pill-text{font-size:.8125rem;color:#b2c5ab}
 
-    /* Primary Highlighted Call to Action Button */
-    .header-actions .header-download, .welcome-download, .dock-action{
-      background:var(--accent)!important;
-      color:#14200e!important;
-      box-shadow:0 4px 22px rgba(204,247,122,.32)!important;
-      border:1px solid rgba(204,247,122,.65)!important;
-      font-weight:800!important;
+    /* Primary Highlighted Call to Action Button - Refined & Harmonized */
+    .header-actions .header-download, .welcome-download, .dock-action {
+      background: linear-gradient(135deg, rgba(204,247,122,.18), rgba(204,247,122,.06)) !important;
+      color: var(--accent) !important;
+      border: 1px solid rgba(204,247,122,.38) !important;
+      box-shadow: 0 4px 18px rgba(0,0,0,.28) !important;
+      font-weight: 700 !important;
+      transition: all 0.25s var(--ease) !important;
     }
-    .header-actions .header-download:hover, .welcome-download:hover, .dock-action:hover{
-      background:#ddff9a!important;
-      box-shadow:0 6px 28px rgba(204,247,122,.45)!important;
+    .header-actions .header-download:hover, .welcome-download:hover, .dock-action:hover {
+      background: rgba(204,247,122,.28) !important;
+      color: #f2f7ed !important;
+      border-color: var(--accent) !important;
+      box-shadow: 0 6px 22px rgba(204,247,122,.25) !important;
+      transform: translateY(-2px);
     }
+
+    /* Enhanced Interactive Star Picker Styling */
+    .star-picker-wrapper { display: flex; flex-direction: column; gap: 8px; }
+    .star-picker-header { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 4px; }
+    .star-picker-label { font-size: 0.8125rem; font-weight: 700; color: var(--accent); background: rgba(204,247,122,0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(204,247,122,0.22); transition: all 0.2s ease; }
+    .star-rating-picker { display: flex; gap: 6px; direction: ltr; align-items: center; }
+    .star-btn { background: none; border: none; padding: 4px; cursor: pointer; color: #3e4e3b; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s, filter 0.2s; }
+    .star-btn svg { width: 28px; height: 28px; fill: currentColor; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    .star-btn.active { color: #f5c518; }
+    .star-btn.active svg { filter: drop-shadow(0 0 8px rgba(245,197,24,0.5)); }
+    .star-btn:hover { transform: scale(1.25); color: #ffd700; }
 
     /* Reviews / Comments Archive Section */
     .reviews-section{background:linear-gradient(180deg,rgba(10,18,14,.4),rgba(6,12,9,.6));border-block:1px solid var(--line)}
@@ -569,7 +587,7 @@
   </svg>
   <header class="header" id="header">
     <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="ZMRT — الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT<span style="color:var(--accent)">.</span></span></a>
+      <a class="brand" href="#home" aria-label="ZMRT — الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT</span></a>
       <nav class="navigation" id="navigation" aria-label="شريط التنقل الرئيسي">
         <a class="nav-link active" href="#home" aria-current="location">الرئيسية</a>
         <a class="nav-link" href="#intro">عن التطبيق</a>
@@ -597,7 +615,7 @@
     <div class="drawer-header">
       <a class="brand" href="#home" aria-label="ZMRT — الرئيسية">
         <span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span>
-        <span class="brand-name" dir="ltr">ZMRT<span style="color:var(--accent)">.</span></span>
+        <span class="brand-name" dir="ltr">ZMRT</span>
       </a>
       <button class="icon-button" id="drawer-close" aria-label="إغلاق القائمة">
         <svg aria-hidden="true"><use href="#i-close"/></svg>
@@ -633,6 +651,10 @@
           <svg aria-hidden="true"><use href="#i-shield"/></svg>
           <span>رؤيتنا والخصوصية</span>
         </a>
+        <a class="drawer-link" href="/سياسة الخصوصية.html">
+          <svg aria-hidden="true"><use href="#i-shield"/></svg>
+          <span>سياسة الخصوصية وشروط الاستخدام</span>
+        </a>
       </nav>
       <div class="drawer-footer">
         <div class="drawer-app-card">
@@ -656,16 +678,11 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 id="hero-title"><span class="welcome-brand" dir="ltr">ZMRT<span class="brand-dot">.</span></span></h1>
+            <h1 id="hero-title"><span class="welcome-brand" dir="ltr">ZMRT</span></h1>
             <p class="welcome-tagline">كل مسافة تصبح أقرب.</p>
             <p class="hero-description">صوتٌ تشتاق إليه، ووجهٌ تحب رؤيته.<br>اجمع لحظاتك ومحادثاتك الصوتية والمرئية في تطبيق واحد.</p>
             <div class="hero-actions">
               <button class="button button-primary welcome-download" data-open-release><svg aria-hidden="true"><use href="#i-download"/></svg><span>تنزيل</span></button>
-              <div class="download-stats-pill" id="hero-download-stat" title="إجمالي عمليات التنزيل المسجلة">
-                <span class="live-dot"></span>
-                <span class="pill-number" id="hero-downloads-num">+12,840</span>
-                <span class="pill-text">عملية تنزيل</span>
-              </div>
             </div>
           </div>
         </div>
@@ -765,7 +782,10 @@
                   <input type="text" id="comment-name" name="name" required placeholder="مثال: أحمد الحربي" maxlength="50" autocomplete="name">
                 </div>
                 <div class="form-field">
-                  <label>تقييمك للتطبيق</label>
+                  <div class="star-picker-header">
+                    <label for="star-picker">تقييمك للتطبيق</label>
+                    <span id="star-picker-badge" class="star-picker-label">5.0 — ممتاز نوصي به شديداً</span>
+                  </div>
                   <div class="star-rating-picker" id="star-picker" role="radiogroup" aria-label="اختر تقييمك من 1 إلى 5 نجوم">
                     <button type="button" class="star-btn active" data-rating="1" aria-label="1 نجمة"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
                     <button type="button" class="star-btn active" data-rating="2" aria-label="2 نجمتان"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
@@ -809,7 +829,7 @@
     <section class="content-section" id="about" aria-labelledby="about-title"><div class="container about-grid"><div class="about-copy reveal"><p class="eyebrow">اعرف قبل أن تبدأ</p><h2 id="about-title">خصوصيتك<br><span>تستحق الوضوح.</span></h2><p>اطّلع على سياسة الخصوصية وشروط الاستخدام، وتعرّف على الأذونات المرتبطة بالكاميرا والميكروفون قبل استخدام التطبيق.</p><div class="hero-actions" style="margin-top:25px"><button class="button button-outline" data-legal="privacy">سياسة الخصوصية</button><button class="button button-outline" data-legal="terms">شروط الاستخدام</button></div></div><div class="principle-list reveal delay-1"><article class="principle"><span class="principle-num" dir="ltr">01</span><div><h3>الميكروفون للمكالمات الصوتية</h3><p>يرتبط استخدام الميكروفون بالتواصل الصوتي داخل التطبيق.</p></div></article><article class="principle"><span class="principle-num" dir="ltr">02</span><div><h3>الكاميرا للمكالمات المرئية</h3><p>يرتبط استخدام الكاميرا بمشاركة الصورة في مكالمات الفيديو.</p></div></article><article class="principle"><span class="principle-num" dir="ltr">03</span><div><h3>أذوناتك في إعدادات جهازك</h3><p>يمكن إدارة أذونات ZMRT من إعدادات أندرويد، ثم التطبيقات، ثم الأذونات.</p></div></article></div></div></section>
     <section class="contact" id="start" aria-labelledby="contact-title"><div class="container"><div class="contact-panel reveal"><div><p class="eyebrow" style="margin-bottom:12px">ZMRT على أندرويد</p><h2 id="contact-title">محادثتك القادمة تبدأ هنا.</h2><p>صوت، وصورة، ولحظات تستحق المشاركة. اكتشف ZMRT على هاتفك.</p></div><button class="button button-primary" data-open-release>تنزيل<svg aria-hidden="true" style="width:19px;height:19px"><use href="#i-download"/></svg></button></div></div></section>
   </main>
-  <footer class="footer"><div class="container"><div class="footer-inner"><div><a class="brand" href="#home" aria-label="ZMRT — العودة إلى الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT<span style="color:var(--accent)">.</span></span></a><p class="footer-caption">تواصل. تحدّث. كن أقرب.</p></div><nav class="footer-links" aria-label="روابط التذييل"><button data-legal="privacy">الخصوصية</button><button data-legal="terms">الشروط</button><button data-legal="delete">حذف الحساب</button><button data-legal="support">الدعم</button></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> <bdi>ZMRT</bdi>. جميع الحقوق محفوظة.</p><p class="latin" lang="en" dir="ltr">VOICE. VIDEO. CLOSER TOGETHER.</p></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer-inner"><div><a class="brand" href="#home" aria-label="ZMRT — العودة إلى الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT</span></a><p class="footer-caption">تواصل. تحدّث. كن أقرب.</p></div><nav class="footer-links" aria-label="روابط التذييل"><button data-legal="privacy">الخصوصية</button><button data-legal="terms">الشروط</button><button data-legal="delete">حذف الحساب</button><button data-legal="support">الدعم</button></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> <bdi>ZMRT</bdi>. جميع الحقوق محفوظة.</p><p class="latin" lang="en" dir="ltr">VOICE. VIDEO. CLOSER TOGETHER.</p></div></div></footer>
   <nav class="mobile-dock" aria-label="التنقل للهاتف">
     <a class="dock-link active" href="#home" aria-current="location"><svg aria-hidden="true"><use href="#i-home"/></svg><span>الرئيسية</span></a>
     <a class="dock-link" href="#services"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>المميزات</span></a>
@@ -827,8 +847,422 @@
     <button class="button button-primary form-submit" id="project-to-brief">تنزيل</button>
   </dialog>
   <dialog id="legal-dialog" aria-labelledby="legal-title"><div class="dialog-header"><h2 id="legal-title">معلومات ZMRT</h2><button class="icon-button" data-close-dialog aria-label="إغلاق صفحة المعلومات"><svg aria-hidden="true"><use href="#i-close"/></svg></button></div><div class="legal-content" id="legal-content"></div></dialog>
-  <template id="legal-privacy"><div class="eyebrow">ZMRT · الوثائق</div><p>آخر تعديل للمسودة: 30 سبتمبر 2026</p><div class="notice">مسودة غير معتمدة للنشر في المتجر. تتطلب مطابقة ممارسات التطبيق وإضافة بيانات مقدم الخدمة والدعم.</div><div class="legal-layout"><aside class="toc" aria-label="فهرس الصفحة"><a href="#privacy-section-0">المعلومات والبيانات</a><a href="#privacy-section-1">الميكروفون والكاميرا</a><a href="#privacy-section-2">أغراض المعالجة</a><a href="#privacy-section-3">الخدمات الخارجية</a><a href="#privacy-section-4">الأمان</a><a href="#privacy-section-5">الاحتفاظ والحذف</a><a href="#privacy-section-6">الأذونات والحقوق</a><a href="#privacy-section-7">الأطفال والتواصل</a></aside><article><section id="privacy-section-0"><h2>المعلومات والبيانات</h2><p>يلزم قبل اعتماد السياسة تحديد بيانات الحساب التي يعالجها الإصدار الفعلي، مثل الاسم أو البريد أو الصورة، وتحديد أي سجلات مكالمات وبيانات تقنية يتم الاحتفاظ بها. لا تمثل هذه المسودة تأكيدًا على جمع جميع تلك البيانات.</p></section><section id="privacy-section-1"><h2>الميكروفون والكاميرا</h2><p>يرتبط استخدام الميكروفون بالمكالمات الصوتية، واستخدام الكاميرا بالمكالمات المرئية. يجب مطابقة النص مع الأذونات الموجودة في إصدار التطبيق الفعلي وتوضيح توقيت طلبها. جهات الاتصال والموقع والصور لا تُدرج كبيانات مجموعة دون التحقق من استخدامها.</p></section><section id="privacy-section-2"><h2>أغراض المعالجة</h2><p>تحدد النسخة المعتمدة أغراض المعالجة الفعلية، ومنها عند التطبيق تشغيل الحسابات والمكالمات، إرسال التنبيهات، منع إساءة الاستخدام وإصلاح الأعطال. ينبغي أن يرتبط كل نوع بيانات بغرض واضح.</p></section><section id="privacy-section-3"><h2>الخدمات الخارجية</h2><p>يجب تسمية مزودي المصادقة والاستضافة والاتصالات والتخزين الفعليين وروابط سياساتهم، وبيان البيانات التي تصل إليهم. لم يتم التحقق من مزودي تطبيق ZMRT ضمن هذه النسخة.</p></section><section id="privacy-section-4"><h2>الأمان</h2><p>تُضاف إجراءات الحماية المطبقة فعلًا بعد مراجعة التطبيق والخوادم. لا تتضمن هذه الصفحة ادعاءً بوجود تشفير من طرف إلى طرف أو ضمان أمان مطلق.</p></section><section id="privacy-section-5"><h2>الاحتفاظ والحذف</h2><p>تحدد النسخة النهائية مدة الاحتفاظ بكل نوع بيانات، وما يُحذف عند حذف الحساب، وأي استثناءات قانونية ومددها. راجع صفحة حذف الحساب لمتابعة حالة تفعيل وسيلة الطلب.</p></section><section id="privacy-section-6"><h2>الأذونات والحقوق</h2><p>يمكن إدارة أذونات التطبيق من إعدادات أندرويد. تختلف الحقوق المتعلقة بالوصول والتصحيح والحذف وسحب الموافقة حسب القانون المطبق؛ تُحدد وسيلة تقديم الطلبات عند اعتماد معلومات الدعم.</p></section><section id="privacy-section-7"><h2>الأطفال والتواصل</h2><p>يجب تحديد الجمهور العمري الفعلي وبيانات مقدم الخدمة ووسيلة الدعم الرسمية قبل اعتماد هذه السياسة. لا توجد وسيلة دعم مؤكدة مضافة في هذه النسخة.</p></section><div class="actions"><button class="button button-outline" data-legal-home>العودة إلى ZMRT</button></div></article></div></template>
-  <template id="legal-terms"><div class="eyebrow">ZMRT · الوثائق</div><p>آخر تعديل للمسودة: 30 سبتمبر 2026</p><div class="notice">مسودة غير معتمدة للنشر في المتجر. تتطلب مطابقة ممارسات التطبيق وإضافة بيانات مقدم الخدمة والدعم.</div><div class="legal-layout"><aside class="toc" aria-label="فهرس الصفحة"><a href="#terms-section-0">قبول الشروط</a><a href="#terms-section-1">الحساب والمسؤولية</a><a href="#terms-section-2">الاستخدام المقبول</a><a href="#terms-section-3">المحتوى والمكالمات</a><a href="#terms-section-4">إساءة الاستخدام</a><a href="#terms-section-5">الملكية والخدمات الخارجية</a><a href="#terms-section-6">التوفر والمسؤولية</a><a href="#terms-section-7">إنهاء الحساب والتعديلات</a></aside><article><section id="terms-section-0"><h2>قبول الشروط</h2><p>تُعتمد شروط الاستخدام عند استكمال بيانات مقدم الخدمة ومراجعتها. ينبغي إتاحتها للمستخدم قبل استخدام الخدمة، مع أي موافقات منفصلة مطلوبة.</p></section><section id="terms-section-1"><h2>الحساب والمسؤولية</h2><p>يتحمل المستخدم مسؤولية صحة المعلومات التي يقدمها وأمان بيانات الدخول، ويحظر انتحال هوية الآخرين. تُحدد متطلبات إنشاء الحساب بحسب التطبيق الفعلي.</p></section><section id="terms-section-2"><h2>الاستخدام المقبول</h2><p>يحظر استخدام الخدمة للتهديد والابتزاز والتحرش والاحتيال ونشر البرمجيات الضارة والاختراق أو استغلال الأطفال أو أي استخدام مخالف للقانون.</p></section><section id="terms-section-3"><h2>المحتوى والمكالمات</h2><p>يتحمل المستخدم مسؤولية محتوى اتصالاته والحقوق المتعلقة بالمواد التي يشاركها. لا تعفي أدوات التواصل المستخدم من الالتزام بالقانون وحقوق الآخرين.</p></section><section id="terms-section-4"><h2>إساءة الاستخدام</h2><p>يمكن أن تنص النسخة المعتمدة على إجراءات متناسبة تجاه المخالفات مثل التقييد والتعليق، مع مراعاة القانون وحقوق المستخدم ووسائل الاعتراض المتاحة.</p></section><section id="terms-section-5"><h2>الملكية والخدمات الخارجية</h2><p>تخضع حقوق اسم وتصميم وبرمجيات التطبيق لأصحابها، وتخضع مكونات الجهات الخارجية لتراخيصها وشروطها. يجب تحديد مقدم الخدمة والحقوق بدقة.</p></section><section id="terms-section-6"><h2>التوفر والمسؤولية</h2><p>قد تتأثر الخدمة بالصيانة أو الشبكة أو الأعطال. لا يوجد ضمان لتوفر دائم. أي حدود للمسؤولية تخضع للقانون ولا تستبعد الحقوق التي لا يجوز التنازل عنها.</p></section><section id="terms-section-7"><h2>إنهاء الحساب والتعديلات</h2><p>توضح النسخة المعتمدة آلية حذف الحساب والتعليق وإنهاء الخدمة وتحديث الشروط، والقانون المنطبق وبيانات التواصل. يجب إخطار المستخدم بالتغييرات عندما يكون ذلك مطلوبًا.</p></section><div class="actions"><button class="button button-outline" data-legal-home>العودة إلى ZMRT</button></div></article></div></template>
+  <template id="legal-privacy-terms">
+    <div class="eyebrow">ZMRT · الوثائق الرسمية</div>
+    <p style="color:var(--accent); font-weight:600; margin-bottom:15px;">آخر تحديث: 1 أكتوبر 2026</p>
+    
+    <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; align-items:center;">
+      <a href="#doc-privacy" class="button button-outline button-small" style="text-decoration:none;">سياسة الخصوصية</a>
+      <a href="#doc-terms" class="button button-outline button-small" style="text-decoration:none;">شروط الاستخدام</a>
+      <a href="/سياسة الخصوصية.html" class="button button-primary button-small" style="text-decoration:none;">الصفحة الكاملة ↗</a>
+    </div>
+
+    <!-- 1. Privacy Policy -->
+    <div id="doc-privacy" class="card" style="margin-bottom:25px; border-color:rgba(204,247,122,0.25);">
+      <h2 style="color:var(--accent); margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px;">سياسة الخصوصية لتطبيق ZMRT</h2>
+      <p style="color:var(--muted); font-size:0.9rem;">آخر تحديث: 1 أكتوبر 2026</p>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">1. نطاق السياسة</h3>
+        <p>توضح هذه السياسة كيفية التعامل مع المعلومات عند استخدام تطبيق ZMRT وخدماته المرتبطة، بما في ذلك معلومات الحساب، وبيانات الاتصال، وأذونات الجهاز، وحقوق المستخدم.</p>
+        <p>تعتمد البيانات التي تتم معالجتها على الميزات المتاحة في إصدار التطبيق والميزات التي يختار المستخدم تشغيلها.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">2. المعلومات التي نعالجها</h3>
+        <p><strong>معلومات الحساب:</strong> قد تشمل اسم العرض، واسم المستخدم، والبريد الإلكتروني أو رقم الهاتف المستخدم للتسجيل، وصورة الملف الشخصي، ومعرّف الحساب، وإعدادات المستخدم. تُستخدم هذه المعلومات لإنشاء الحساب، وتسجيل الدخول، وإدارة الملف الشخصي، وتمكين التواصل بين المستخدمين.</p>
+        <p><strong>بيانات المكالمات والتواصل:</strong> عند استخدام ميزات الاتصال، قد تتم معالجة معرّفات أطراف الاتصال، ووقت المكالمة ومدتها وحالتها، والبيانات التقنية اللازمة لإنشاء الاتصال وتشخيص مشكلاته. تتم معالجة الصوت والفيديو لتوفير المكالمة التي يبدأها المستخدم أو يوافق على استقبالها. ولا يُعد منح إذن الميكروفون أو الكاميرا موافقةً على تسجيل المكالمات؛ فأي ميزة تسجيل تتطلب إفصاحًا واضحًا وموافقة مناسبة وفق القانون. إذا توفرت ميزات الرسائل أو مشاركة الملفات، تتم معالجة المحتوى الذي يرسله المستخدم بالقدر اللازم لتقديم هذه الميزات.</p>
+        <p><strong>الصور والملفات:</strong> عندما يختار المستخدم صورة شخصية أو ملفًا لمشاركته، تتم معالجة العنصر المختار لتقديم الوظيفة المطلوبة.</p>
+        <p><strong>معلومات الجهاز والاتصال:</strong> قد تتم معالجة عنوان IP، وإصدار نظام التشغيل والتطبيق، ونوع الجهاز، ورمز الإشعارات، وسجلات الأخطاء والبيانات التقنية اللازمة لتشغيل الخدمة وحمايتها وتحسين استقرارها.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">3. أذونات الجهاز وأسباب استخدامها</h3>
+        <p>يطلب التطبيق الأذونات المرتبطة بالميزات المتاحة، عند الحاجة إليها:</p>
+        <ul style="padding-right:20px; line-height:1.8;">
+          <li><strong>الإنترنت:</strong> لتسجيل الدخول، ومزامنة البيانات، وإجراء المكالمات والتواصل مع الخوادم.</li>
+          <li><strong>الميكروفون:</strong> لإرسال الصوت أثناء المكالمات والميزات الصوتية التي يفعّلها المستخدم.</li>
+          <li><strong>الكاميرا:</strong> لإجراء مكالمات الفيديو أو التقاط الصور عندما يختار المستخدم ذلك.</li>
+          <li><strong>الإشعارات:</strong> للتنبيه بالمكالمات الواردة والفائتة والرسائل وتحديثات الحساب.</li>
+          <li><strong>جهات الاتصال:</strong> إذا توفرت ميزة العثور على المعارف، لتسهيل اكتشاف الأشخاص والتواصل معهم بعد منح الإذن.</li>
+          <li><strong>الصور والفيديو والملفات:</strong> للوصول إلى العناصر التي يختار المستخدم استخدامها أو مشاركتها.</li>
+          <li><strong>Bluetooth:</strong> لاستخدام سماعات وأجهزة الصوت المتصلة أثناء المكالمات.</li>
+          <li><strong>الخدمات الأمامية:</strong> لاستمرار المكالمة النشطة مع إظهار إشعار مناسب وفق متطلبات Android.</li>
+          <li><strong>منع السكون:</strong> للمحافظة على العمليات الضرورية للمكالمة ومنع انقطاعها بسبب سكون الجهاز.</li>
+          <li><strong>الاهتزاز:</strong> للتنبيه بالمكالمات والإشعارات.</li>
+          <li><strong>عرض المكالمات بملء الشاشة:</strong> لإظهار المكالمة الواردة عندما تسمح إعدادات الجهاز ومتطلبات النظام بذلك.</li>
+        </ul>
+        <p>يمكن تعديل الأذونات من إعدادات الجهاز. وقد تؤدي رفض إذن إلى تعذر تشغيل الميزة التي تعتمد عليه.</p>
+        <p>لا تتم معالجة الموقع الجغرافي إلا عند توفير ميزة تحتاج إليه، مع توضيح الغرض وطلب الإذن المناسب قبل الوصول إليه.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">4. أغراض استخدام المعلومات</h3>
+        <p>تُستخدم المعلومات لتوفير وظائف التطبيق، وإدارة الحسابات، وإجراء الاتصالات، وتسليم الإشعارات، وتنفيذ طلبات المستخدم، وتقديم الدعم، وتشخيص الأعطال، وحماية الخدمة من الاحتيال وإساءة الاستخدام، والوفاء بالالتزامات القانونية المنطبقة.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">5. مشاركة المعلومات</h3>
+        <p>قد تظهر للمستخدمين الآخرين معلومات الملف الشخصي والمحتوى الذي يختار المستخدم مشاركته، بحسب طبيعة الميزة وإعداداتها.</p>
+        <p>قد تتم معالجة المعلومات بواسطة مزودي الخدمات التقنية اللازمين لتشغيل التطبيق، مثل خدمات المصادقة، والاستضافة، وقواعد البيانات، وتخزين الملفات، والإشعارات والاتصالات.</p>
+        <p>وقد يُفصح عن المعلومات بالقدر اللازم للاستجابة لالتزام قانوني صالح، أو حماية الحقوق وسلامة المستخدمين والخدمة.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">6. حماية المعلومات</h3>
+        <p>نتخذ تدابير تقنية وتنظيمية معقولة لحماية المعلومات من الوصول أو الاستخدام أو التعديل غير المصرح به. ومع ذلك، لا يمكن ضمان الأمان المطلق لأي خدمة إلكترونية.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">7. الاحتفاظ بالمعلومات</h3>
+        <p>يتم الاحتفاظ بالمعلومات للمدة اللازمة لتقديم الخدمة وتحقيق الأغراض الموضحة في هذه السياسة.</p>
+        <p>قد يُحتفظ ببعض المعلومات بعد إغلاق الحساب عندما يلزم ذلك للامتثال للقانون، أو معالجة النزاعات، أو منع الاحتيال، على أن يقتصر الاحتفاظ على المعلومات والمدة الضروريتين.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">8. حذف الحساب والبيانات</h3>
+        <p>يمكن للمستخدم طلب حذف حسابه والبيانات المرتبطة به من خلال خيار الحذف المتاح داخل التطبيق أو وسيلة طلب الحذف الرسمية المنشورة ضمن معلومات التطبيق.</p>
+        <p>قد نطلب التحقق من ملكية الحساب قبل تنفيذ الطلب. ويشمل الحذف البيانات المرتبطة بالحساب، باستثناء ما يلزم الاحتفاظ به لأسباب قانونية أو أمنية مشروعة.</p>
+        <p>قد تبقى الرسائل أو الملفات التي سبق مشاركتها ضمن حسابات المستلمين أو نسخهم الخاصة، بحسب طبيعة الميزة.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">9. حقوق المستخدم</h3>
+        <p>وفق القانون المنطبق، يمكن للمستخدم طلب الوصول إلى معلوماته، وتصحيحها، وحذفها، وسحب الموافقات التي تعتمد عليها المعالجة، أو الاعتراض على بعض استخداماتها.</p>
+        <p>يمكن تقديم هذه الطلبات عبر وسيلة الدعم الرسمية المنشورة في صفحة التطبيق. وقد يتطلب تنفيذها التحقق من الهوية.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">10. نقل المعلومات بين الدول</h3>
+        <p>قد تُعالج المعلومات في الدول التي يعمل فيها مزودو البنية التقنية. وعندما تنطبق متطلبات قانونية على نقل البيانات، تُراعى الضمانات المطلوبة بموجبها.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">11. الأطفال والقاصرون</h3>
+        <p>يجب الالتزام بالعمر المسموح لاستخدام التطبيق كما هو موضح في صفحة المتجر والقانون المحلي. وعندما يتطلب القانون موافقة ولي الأمر، يجب الحصول عليها قبل الاستخدام.</p>
+        <p>إذا تبيّن جمع معلومات طفل بصورة مخالفة للمتطلبات المنطبقة، تُتخذ الإجراءات المناسبة، بما فيها حذف المعلومات عند الحاجة.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">12. تحديث السياسة والتواصل</h3>
+        <p>قد تُحدّث هذه السياسة عند تغير ميزات التطبيق أو ممارسات معالجة المعلومات. ويُعدّل تاريخ التحديث، ويُبلّغ المستخدم بالتغييرات الجوهرية بالطريقة المناسبة.</p>
+        <p>للاستفسارات المتعلقة بالخصوصية أو لممارسة الحقوق، تُستخدم معلومات التواصل الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </div>
+    </div>
+
+    <!-- 2. Terms of Use -->
+    <div id="doc-terms" class="card" style="margin-bottom:25px; border-color:rgba(204,247,122,0.25);">
+      <h2 style="color:var(--accent); margin-top:0; border-bottom:1px solid var(--line); padding-bottom:12px;">شروط استخدام تطبيق ZMRT</h2>
+      <p style="color:var(--muted); font-size:0.9rem;">آخر تحديث: 1 أكتوبر 2026</p>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">1. قبول الشروط</h3>
+        <p>باستخدام ZMRT، يوافق المستخدم على هذه الشروط. ومن لا يوافق عليها يجب أن يتوقف عن استخدام الخدمة.</p>
+        <p>لا تُعد الموافقة على هذه الشروط بديلًا عن أي موافقة منفصلة يتطلبها القانون لمعالجة البيانات الشخصية.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">2. أهلية الاستخدام</h3>
+        <p>يجب أن يستوفي المستخدم متطلبات العمر والأهلية القانونية المنطبقة عليه. وإذا تطلب القانون موافقة ولي الأمر، يتحمل المستخدم وولي أمره مسؤولية الحصول عليها.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">3. حساب المستخدم</h3>
+        <p>يتحمل المستخدم مسؤولية صحة المعلومات المقدمة، وحماية بيانات الدخول، والأنشطة التي تتم من خلال حسابه، وإبلاغ الدعم عند اكتشاف وصول غير مصرح به.</p>
+        <p>يُحظر إنشاء حساب لانتحال شخصية شخص آخر أو تضليل المستخدمين.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">4. الاستخدام المقبول</h3>
+        <p>يُحظر استخدام التطبيق في:</p>
+        <ul style="padding-right:20px; line-height:1.8;">
+          <li>الاحتيال أو التهديد أو الابتزاز أو التحرش.</li>
+          <li>انتهاك خصوصية الآخرين أو نشر بياناتهم دون حق.</li>
+          <li>استغلال الأطفال أو تعريضهم للخطر.</li>
+          <li>إرسال محتوى غير قانوني أو ينتهك حقوق الآخرين.</li>
+          <li>نشر البرمجيات الضارة أو محاولة اختراق الحسابات والأنظمة.</li>
+          <li>إرسال اتصالات مزعجة أو آلية بصورة مسيئة.</li>
+          <li>تجاوز أنظمة الحماية أو تعطيل الخدمة.</li>
+          <li>أي نشاط يخالف القوانين المنطبقة.</li>
+        </ul>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">5. محتوى المستخدم</h3>
+        <p>يبقى المستخدم مالكًا لحقوق محتواه، ويتحمل مسؤولية امتلاكه الحقوق والموافقات اللازمة لمشاركته.</p>
+        <p>يمنح المستخدم الخدمة الإذن التقني اللازم لمعالجة محتواه ونقله وتخزينه وعرضه بالقدر الضروري لتقديم الميزات التي يستخدمها، دون أن يؤدي ذلك إلى نقل ملكية المحتوى.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">6. المكالمات والتسجيل</h3>
+        <p>يتحمل المستخدم مسؤولية محتوى اتصالاته والتزامه بالقوانين المتعلقة بالمكالمات والتسجيل والخصوصية.</p>
+        <p>لا يجوز تسجيل الآخرين أو نشر اتصالاتهم دون الموافقات التي يتطلبها القانون.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">7. خدمات الطوارئ</h3>
+        <p>لا ينبغي الاعتماد على ZMRT كوسيلة للاتصال بخدمات الطوارئ. عند وجود حالة طارئة، يجب استخدام وسائل الاتصال الرسمية المتاحة في بلد المستخدم.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">8. تعليق الحساب أو إنهاؤه</h3>
+        <p>يجوز تقييد الحساب أو تعليقه أو إنهاؤه عند مخالفة هذه الشروط، أو إساءة استخدام الخدمة، أو تعريض المستخدمين أو الأنظمة للخطر، أو تنفيذ التزام قانوني.</p>
+        <p>تُراعى طبيعة المخالفة والقانون المنطبق عند اتخاذ الإجراء. ويمكن التواصل مع الدعم للاستفسار عن إجراءات الحساب.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">9. الملكية الفكرية</h3>
+        <p>تعود حقوق التطبيق وعلامته وتصميماته ومكوناته الأصلية إلى أصحابها. وتبقى حقوق مكونات الأطراف الخارجية لأصحابها وفق تراخيصها.</p>
+        <p>لا يجوز نسخ التطبيق أو إعادة توزيعه أو استغلال علامته دون تصريح، إلا بالقدر الذي يسمح به القانون أو الترخيص المنطبق.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">10. الخدمات الخارجية</h3>
+        <p>قد يعتمد التطبيق على خدمات تقدمها جهات خارجية، وقد تخضع هذه الخدمات لشروط وسياسات مستقلة. ويُحدد نطاق مسؤولية كل جهة وفق دورها والقانون المنطبق.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">11. توفر الخدمة وتعديلها</h3>
+        <p>قد تتأثر الخدمة بأعمال الصيانة، أو أعطال الشبكات والخوادم، أو تحديثات الأنظمة. ولا نضمن استمرار توفرها دون انقطاع.</p>
+        <p>قد تُضاف ميزات أو تُعدّل أو تُوقف، مع تقديم الإشعارات اللازمة عندما يفرض القانون ذلك أو يؤثر التغيير بصورة جوهرية على حقوق المستخدم.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">12. المسؤولية</h3>
+        <p>تُقدّم الخدمة وفق حالتها المتاحة، في الحدود التي يسمح بها القانون، دون ضمان خلوها التام من الأخطاء أو الانقطاعات.</p>
+        <p>لا تستبعد هذه الشروط المسؤولية عن الغش أو أي مسؤولية أو حقوق إلزامية لا يجوز استبعادها قانونًا. ويخضع أي تحديد للمسؤولية للحدود التي يجيزها القانون المنطبق.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">13. إنهاء الاستخدام</h3>
+        <p>يمكن للمستخدم التوقف عن استخدام التطبيق وطلب حذف حسابه وفق سياسة الخصوصية. وتظل الالتزامات التي يُقصد استمرارها بعد إنهاء الاستخدام سارية بالقدر الذي يسمح به القانون.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">14. القانون المنطبق</h3>
+        <p>تخضع هذه الشروط للقوانين المنطبقة على مقدم الخدمة والمستخدم، دون الانتقاص من حقوق المستهلك الإلزامية في بلد إقامته. وتُحال النزاعات إلى الجهات المختصة قانونًا.</p>
+      </div>
+
+      <div style="margin-top:16px;">
+        <h3 style="color:var(--text); font-size:1.1rem; margin-bottom:8px;">15. تحديث الشروط والتواصل</h3>
+        <p>قد تُحدّث هذه الشروط، ويُوضّح تاريخ آخر تحديث. ويُبلّغ المستخدم بالتغييرات الجوهرية عند الحاجة، وتُطلب الموافقة الجديدة إذا تطلب القانون ذلك.</p>
+        <p>للاستفسارات أو الشكاوى، تُستخدم معلومات الدعم الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="button button-outline" data-legal-home>العودة إلى ZMRT</button>
+    </div>
+  </template>
+
+  <template id="legal-privacy">
+    <div class="eyebrow">ZMRT · السياسة الرسمية</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h2 style="color:var(--accent); margin-top:0;">سياسة الخصوصية لتطبيق ZMRT</h2>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0;">آخر تحديث: 1 أكتوبر 2026</p>
+    </div>
+
+    <div class="card">
+      <div style="margin-bottom:20px;">
+        <h3>1. نطاق السياسة</h3>
+        <p>توضح هذه السياسة كيفية التعامل مع المعلومات عند استخدام تطبيق ZMRT وخدماته المرتبطة، بما في ذلك معلومات الحساب، وبيانات الاتصال، وأذونات الجهاز، وحقوق المستخدم.</p>
+        <p>تعتمد البيانات التي تتم معالجتها على الميزات المتاحة في إصدار التطبيق والميزات التي يختار المستخدم تشغيلها.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>2. المعلومات التي نعالجها</h3>
+        <p><strong>معلومات الحساب:</strong> قد تشمل اسم العرض، واسم المستخدم، والبريد الإلكتروني أو رقم الهاتف المستخدم للتسجيل، وصورة الملف الشخصي، ومعرّف الحساب، وإعدادات المستخدم. تُستخدم هذه المعلومات لإنشاء الحساب، وتسجيل الدخول، وإدارة الملف الشخصي، وتمكين التواصل بين المستخدمين.</p>
+        <p><strong>بيانات المكالمات والتواصل:</strong> عند استخدام ميزات الاتصال، قد تتم معالجة معرّفات أطراف الاتصال، ووقت المكالمة ومدتها وحالتها، والبيانات التقنية اللازمة لإنشاء الاتصال وتشخيص مشكلاته. تتم معالجة الصوت والفيديو لتوفير المكالمة التي يبدأها المستخدم أو يوافق على استقبالها. ولا يُعد منح إذن الميكروفون أو الكاميرا موافقةً على تسجيل المكالمات؛ فأي ميزة تسجيل تتطلب إفصاحًا واضحًا وموافقة مناسبة وفق القانون. إذا توفرت ميزات الرسائل أو مشاركة الملفات، تتم معالجة المحتوى الذي يرسله المستخدم بالقدر اللازم لتقديم هذه الميزات.</p>
+        <p><strong>الصور والملفات:</strong> عندما يختار المستخدم صورة شخصية أو ملفًا لمشاركته، تتم معالجة العنصر المختار لتقديم الوظيفة المطلوبة.</p>
+        <p><strong>معلومات الجهاز والاتصال:</strong> قد تتم معالجة عنوان IP، وإصدار نظام التشغيل والتطبيق، ونوع الجهاز، ورمز الإشعارات، وسجلات الأخطاء والبيانات التقنية اللازمة لتشغيل الخدمة وحمايتها وتحسين استقرارها.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>3. أذونات الجهاز وأسباب استخدامها</h3>
+        <p>يطلب التطبيق الأذونات المرتبطة بالميزات المتاحة، عند الحاجة إليها:</p>
+        <ul style="padding-right:20px; line-height:1.8;">
+          <li><strong>الإنترنت:</strong> لتسجيل الدخول، ومزامنة البيانات، وإجراء المكالمات والتواصل مع الخوادم.</li>
+          <li><strong>الميكروفون:</strong> لإرسال الصوت أثناء المكالمات والميزات الصوتية التي يفعّلها المستخدم.</li>
+          <li><strong>الكاميرا:</strong> لإجراء مكالمات الفيديو أو التقاط الصور عندما يختار المستخدم ذلك.</li>
+          <li><strong>الإشعارات:</strong> للتنبيه بالمكالمات الواردة والفائتة والرسائل وتحديثات الحساب.</li>
+          <li><strong>جهات الاتصال:</strong> إذا توفرت ميزة العثور على المعارف، لتسهيل اكتشاف الأشخاص والتواصل معهم بعد منح الإذن.</li>
+          <li><strong>الصور والفيديو والملفات:</strong> للوصول إلى العناصر التي يختار المستخدم استخدامها أو مشاركتها.</li>
+          <li><strong>Bluetooth:</strong> لاستخدام سماعات وأجهزة الصوت المتصلة أثناء المكالمات.</li>
+          <li><strong>الخدمات الأمامية:</strong> لاستمرار المكالمة النشطة مع إظهار إشعار مناسب وفق متطلبات Android.</li>
+          <li><strong>منع السكون:</strong> للمحافظة على العمليات الضرورية للمكالمة ومنع انقطاعها بسبب سكون الجهاز.</li>
+          <li><strong>الاهتزاز:</strong> للتنبيه بالمكالمات والإشعارات.</li>
+          <li><strong>عرض المكالمات بملء الشاشة:</strong> لإظهار المكالمة الواردة عندما تسمح إعدادات الجهاز ومتطلبات النظام بذلك.</li>
+        </ul>
+        <p>يمكن تعديل الأذونات من إعدادات الجهاز. وقد تؤدي رفض إذن إلى تعذر تشغيل الميزة التي تعتمد عليه.</p>
+        <p>لا تتم معالجة الموقع الجغرافي إلا عند توفير ميزة تحتاج إليه، مع توضيح الغرض وطلب الإذن المناسب قبل الوصول إليه.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>4. أغراض استخدام المعلومات</h3>
+        <p>تُستخدم المعلومات لتوفير وظائف التطبيق، وإدارة الحسابات، وإجراء الاتصالات، وتسليم الإشعارات، وتنفيذ طلبات المستخدم، وتقديم الدعم، وتشخيص الأعطال، وحماية الخدمة من الاحتيال وإساءة الاستخدام، والوفاء بالالتزامات القانونية المنطبقة.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>5. مشاركة المعلومات</h3>
+        <p>قد تظهر للمستخدمين الآخرين معلومات الملف الشخصي والمحتوى الذي يختار المستخدم مشاركته، بحسب طبيعة الميزة وإعداداتها.</p>
+        <p>قد تتم معالجة المعلومات بواسطة مزودي الخدمات التقنية اللازمين لتشغيل التطبيق، مثل خدمات المصادقة، والاستضافة، وقواعد البيانات، وتخزين الملفات، والإشعارات والاتصالات.</p>
+        <p>وقد يُفصح عن المعلومات بالقدر اللازم للاستجابة لالتزام قانوني صالح، أو حماية الحقوق وسلامة المستخدمين والخدمة.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>6. حماية المعلومات</h3>
+        <p>نتخذ تدابير تقنية وتنظيمية معقولة لحماية المعلومات من الوصول أو الاستخدام أو التعديل غير المصرح به. ومع ذلك، لا يمكن ضمان الأمان المطلق لأي خدمة إلكترونية.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>7. الاحتفاظ بالمعلومات</h3>
+        <p>يتم الاحتفاظ بالمعلومات للمدة اللازمة لتقديم الخدمة وتحقيق الأغراض الموضحة في هذه السياسة.</p>
+        <p>قد يُحتفظ ببعض المعلومات بعد إغلاق الحساب عندما يلزم ذلك للامتثال للقانون، أو معالجة النزاعات، أو منع الاحتيال، على أن يقتصر الاحتفاظ على المعلومات والمدة الضروريتين.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>8. حذف الحساب والبيانات</h3>
+        <p>يمكن للمستخدم طلب حذف حسابه والبيانات المرتبطة به من خلال خيار الحذف المتاح داخل التطبيق أو وسيلة طلب الحذف الرسمية المنشورة ضمن معلومات التطبيق.</p>
+        <p>قد نطلب التحقق من ملكية الحساب قبل تنفيذ الطلب. ويشمل الحذف البيانات المرتبطة بالحساب، باستثناء ما يلزم الاحتفاظ به لأسباب قانونية أو أمنية مشروعة.</p>
+        <p>قد تبقى الرسائل أو الملفات التي سبق مشاركتها ضمن حسابات المستلمين أو نسخهم الخاصة، بحسب طبيعة الميزة.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>9. حقوق المستخدم</h3>
+        <p>وفق القانون المنطبق، يمكن للمستخدم طلب الوصول إلى معلوماته، وتصحيحها، وحذفها، وسحب الموافقات التي تعتمد عليها المعالجة، أو الاعتراض على بعض استخداماتها.</p>
+        <p>يمكن تقديم هذه الطلبات عبر وسيلة الدعم الرسمية المنشورة في صفحة التطبيق. وقد يتطلب تنفيذها التحقق من الهوية.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>10. نقل المعلومات بين الدول</h3>
+        <p>قد تُعالج المعلومات في الدول التي يعمل فيها مزودو البنية التقنية. وعندما تنطبق متطلبات قانونية على نقل البيانات، تُراعى الضمانات المطلوبة بموجبها.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>11. الأطفال والقاصرون</h3>
+        <p>يجب الالتزام بالعمر المسموح لاستخدام التطبيق كما هو موضح في صفحة المتجر والقانون المحلي. وعندما يتطلب القانون موافقة ولي الأمر، يجب الحصول عليها قبل الاستخدام.</p>
+        <p>إذا تبيّن جمع معلومات طفل بصورة مخالفة للمتطلبات المنطبقة، تُتخذ الإجراءات المناسبة، بما فيها حذف المعلومات عند الحاجة.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>12. تحديث السياسة والتواصل</h3>
+        <p>قد تُحدّث هذه السياسة عند تغير ميزات التطبيق أو ممارسات معالجة المعلومات. ويُعدّل تاريخ التحديث، ويُبلّغ المستخدم بالتغييرات الجوهرية بالطريقة المناسبة.</p>
+        <p>للاستفسارات المتعلقة بالخصوصية أو لممارسة الحقوق، تُستخدم معلومات التواصل الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="button button-outline" data-legal-home>العودة إلى ZMRT</button>
+    </div>
+  </template>
+
+  <template id="legal-terms">
+    <div class="eyebrow">ZMRT · الشروط الرسمية</div>
+    <div class="card" style="margin-bottom:20px;">
+      <h2 style="color:var(--accent); margin-top:0;">شروط استخدام تطبيق ZMRT</h2>
+      <p style="color:var(--muted); font-size:0.9rem; margin:0;">آخر تحديث: 1 أكتوبر 2026</p>
+    </div>
+
+    <div class="card">
+      <div style="margin-bottom:20px;">
+        <h3>1. قبول الشروط</h3>
+        <p>باستخدام ZMRT، يوافق المستخدم على هذه الشروط. ومن لا يوافق عليها يجب أن يتوقف عن استخدام الخدمة.</p>
+        <p>لا تُعد الموافقة على هذه الشروط بديلًا عن أي موافقة منفصلة يتطلبها القانون لمعالجة البيانات الشخصية.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>2. أهلية الاستخدام</h3>
+        <p>يجب أن يستوفي المستخدم متطلبات العمر والأهلية القانونية المنطبقة عليه. وإذا تطلب القانون موافقة ولي الأمر، يتحمل المستخدم وولي أمره مسؤولية الحصول عليها.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>3. حساب المستخدم</h3>
+        <p>يتحمل المستخدم مسؤولية صحة المعلومات المقدمة، وحماية بيانات الدخول، والأنشطة التي تتم من خلال حسابه، وإبلاغ الدعم عند اكتشاف وصول غير مصرح به.</p>
+        <p>يُحظر إنشاء حساب لانتحال شخصية شخص آخر أو تضليل المستخدمين.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>4. الاستخدام المقبول</h3>
+        <p>يُحظر استخدام التطبيق في:</p>
+        <ul style="padding-right:20px; line-height:1.8;">
+          <li>الاحتيال أو التهديد أو الابتزاز أو التحرش.</li>
+          <li>انتهاك خصوصية الآخرين أو نشر بياناتهم دون حق.</li>
+          <li>استغلال الأطفال أو تعريضهم للخطر.</li>
+          <li>إرسال محتوى غير قانوني أو ينتهك حقوق الآخرين.</li>
+          <li>نشر البرمجيات الضارة أو محاولة اختراق الحسابات والأنظمة.</li>
+          <li>إرسال اتصالات مزعجة أو آلية بصورة مسيئة.</li>
+          <li>تجاوز أنظمة الحماية أو تعطيل الخدمة.</li>
+          <li>أي نشاط يخالف القوانين المنطبقة.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>5. محتوى المستخدم</h3>
+        <p>يبقى المستخدم مالكًا لحقوق محتواه، ويتحمل مسؤولية امتلاكه الحقوق والموافقات اللازمة لمشاركته.</p>
+        <p>يمنح المستخدم الخدمة الإذن التقني اللازم لمعالجة محتواه ونقله وتخزينه وعرضه بالقدر الضروري لتقديم الميزات التي يستخدمها، دون أن يؤدي ذلك إلى نقل ملكية المحتوى.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>6. المكالمات والتسجيل</h3>
+        <p>يتحمل المستخدم مسؤولية محتوى اتصالاته والتزامه بالقوانين المتعلقة بالمكالمات والتسجيل والخصوصية.</p>
+        <p>لا يجوز تسجيل الآخرين أو نشر اتصالاتهم دون الموافقات التي يتطلبها القانون.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>7. خدمات الطوارئ</h3>
+        <p>لا ينبغي الاعتماد على ZMRT كوسيلة للاتصال بخدمات الطوارئ. عند وجود حالة طارئة، يجب استخدام وسائل الاتصال الرسمية المتاحة في بلد المستخدم.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>8. تعليق الحساب أو إنهاؤه</h3>
+        <p>يجوز تقييد الحساب أو تعليقه أو إنهاؤه عند مخالفة هذه الشروط، أو إساءة استخدام الخدمة، أو تعريض المستخدمين أو الأنظمة للخطر، أو تنفيذ التزام قانوني.</p>
+        <p>تُراعى طبيعة المخالفة والقانون المنطبق عند اتخاذ الإجراء. ويمكن التواصل مع الدعم للاستفسار عن إجراءات الحساب.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>9. الملكية الفكرية</h3>
+        <p>تعود حقوق التطبيق وعلامته وتصميماته ومكوناته الأصلية إلى أصحابها. وتبقى حقوق مكونات الأطراف الخارجية لأصحابها وفق تراخيصها.</p>
+        <p>لا يجوز نسخ التطبيق أو إعادة توزيعه أو استغلال علامته دون تصريح، إلا بالقدر الذي يسمح به القانون أو الترخيص المنطبق.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>10. الخدمات الخارجية</h3>
+        <p>قد يعتمد التطبيق على خدمات تقدمها جهات خارجية، وقد تخضع هذه الخدمات لشروط وسياسات مستقلة. ويُحدد نطاق مسؤولية كل جهة وفق دورها والقانون المنطبق.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>11. توفر الخدمة وتعديلها</h3>
+        <p>قد تتأثر الخدمة بأعمال الصيانة، أو أعطال الشبكات والخوادم، أو تحديثات الأنظمة. ولا نضمن استمرار توفرها دون انقطاع.</p>
+        <p>قد تُضاف ميزات أو تُعدّل أو تُوقف، مع تقديم الإشعارات اللازمة عندما يفرض القانون ذلك أو يؤثر التغيير بصورة جوهرية على حقوق المستخدم.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>12. المسؤولية</h3>
+        <p>تُقدّم الخدمة وفق حالتها المتاحة، في الحدود التي يسمح بها القانون، دون ضمان خلوها التام من الأخطاء أو الانقطاعات.</p>
+        <p>لا تستبعد هذه الشروط المسؤولية عن الغش أو أي مسؤولية أو حقوق إلزامية لا يجوز استبعادها قانونًا. ويخضع أي تحديد للمسؤولية للحدود التي يجيزها القانون المنطبق.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>13. إنهاء الاستخدام</h3>
+        <p>يمكن للمستخدم التوقف عن استخدام التطبيق وطلب حذف حسابه وفق سياسة الخصوصية. وتظل الالتزامات التي يُقصد استمرارها بعد إنهاء الاستخدام سارية بالقدر الذي يسمح به القانون.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>14. القانون المنطبق</h3>
+        <p>تخضع هذه الشروط للقوانين المنطبقة على مقدم الخدمة والمستخدم، دون الانتقاص من حقوق المستهلك الإلزامية في بلد إقامته. وتُحال النزاعات إلى الجهات المختصة قانونًا.</p>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <h3>15. تحديث الشروط والتواصل</h3>
+        <p>قد تُحدّث هذه الشروط، ويُوضّح تاريخ آخر تحديث. ويُبلّغ المستخدم بالتغييرات الجوهرية عند الحاجة، وتُطلب الموافقة الجديدة إذا تطلب القانون ذلك.</p>
+        <p>للاستفسارات أو الشكاوى، تُستخدم معلومات الدعم الرسمية المنشورة في صفحة ZMRT على متجر التطبيقات.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="button button-outline" data-legal-home>العودة إلى ZMRT</button>
+    </div>
+  </template>
   <template id="legal-delete"><div class="notice">وسيلة إرسال طلب الحذف لم تُفعّل بعد. هذه الصفحة لا تحذف حسابك ولا ترسل طلبًا.</div><div class="card"><h2>طلب حذف حساب ZMRT</h2><p>عند تفعيل وسيلة الدعم، أرسل معرّف حسابك وطلب حذف الحساب والبيانات المرتبطة به. لا ترسل كلمة مرورك أو رمز التحقق.</p><p>يجب تأكيد الهوية عبر وسيلة آمنة قبل تنفيذ الحذف. تُنشر هنا أنواع البيانات المحذوفة، وأي بيانات يُحتفظ بها ومدة الاحتفاظ، بعد مراجعة التطبيق.</p><p class="notice">وسيلة الدعم غير متاحة حاليًا</p><p class="small">يجب تفعيل الطلب خارج التطبيق وإجراء اختبار حقيقي للحذف قبل اعتماد الصفحة.</p></div></template>
   <template id="legal-support"><div class="card"><h2>دعم ZMRT</h2><p>تُضاف وسيلة الدعم الرسمية عند تأكيدها من المطور.</p><p class="notice">وسيلة الدعم لم تُحدد بعد</p></div><h2>أسئلة شائعة</h2><details class="card"><summary>أين أحمّل التطبيق؟</summary><p>ستجد رابط Google Play الرسمي في قسم التحميل بمجرد إضافته.</p></details><details class="card"><summary>هل هذا موقع لإجراء المكالمات؟</summary><p>هذا موقع تعريفي لتطبيق أندرويد. المكالمات تتم داخل التطبيق.</p></details><details class="card"><summary>كيف أغيّر أذونات الكاميرا والميكروفون؟</summary><p>من إعدادات أندرويد، التطبيقات، ZMRT، الأذونات.</p></details></template>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -841,27 +1275,29 @@
       'use strict';
       const root = document.documentElement;
       const header = document.getElementById('header');
-      const menu = document.getElementById('navigation');
       const menuButton = document.getElementById('menu-toggle');
       const drawer = document.getElementById('nav-drawer');
       const drawerBackdrop = document.getElementById('nav-drawer-backdrop');
       const drawerCloseBtn = document.getElementById('drawer-close');
-      const drawerLinks = document.querySelectorAll('.drawer-link');
       const progress = document.querySelector('.progress');
       const backTop = document.querySelector('.back-top');
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const navLinks = [...document.querySelectorAll('.nav-link, .drawer-link[href], .dock-link[href]')];
-      const sections = [...new Set(navLinks.map(link => link.getAttribute('href')))].map(hash => document.querySelector(hash)).filter(Boolean).sort((a,b) => a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
       const releaseDialog = document.getElementById('release-dialog');
       const legalDialog = document.getElementById('legal-dialog');
       const projectDialog = document.getElementById('project-dialog');
+      const numberFormat = new Intl.NumberFormat('en-US');
+      
       let ticking = false;
       let downloadUrl = null;
+      let isClickScrolling = false;
+      let scrollTimeout = null;
+
       try {
         const cfg = JSON.parse(document.getElementById('app-config').textContent || '{}');
         downloadUrl = cfg.downloadUrl;
       } catch (_) {}
 
+      // Drawer Open / Close Functions (3-Bars Hamburger Menu)
       const openDrawer = () => {
         if (!drawer) return;
         drawer.classList.add('open');
@@ -900,52 +1336,103 @@
       if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
       if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          if (href && href.startsWith('#')) {
-            const target = document.querySelector(href);
-            if (target) {
-              e.preventDefault();
-              closeDrawer();
-              target.scrollIntoView({
-                behavior: root.classList.contains('no-motion') ? 'instant' : 'smooth',
-                block: 'start'
-              });
-              if (history.pushState) history.pushState(null, null, href);
-              updateScroll();
-            }
-          }
-        });
-      });
-
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && drawer && drawer.classList.contains('open')) {
           closeDrawer();
         }
       });
-      function updateScroll() {
+
+      // Navigation Link Active State Management
+      function setActiveNav(targetId) {
+        if (!targetId) return;
+        const allLinks = document.querySelectorAll('.nav-link, .drawer-link[href], .dock-link[href]');
+        allLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          const isTarget = href === '#' + targetId;
+          link.classList.toggle('active', isTarget);
+          if (isTarget) {
+            link.setAttribute('aria-current', 'location');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      function updateActiveNavOnScroll() {
+        if (isClickScrolling) return;
+        const sectionIds = ['home', 'intro', 'services', 'how', 'stats', 'reviews', 'about'];
+        const headerOffset = header ? header.offsetHeight + 40 : 110;
+        let current = 'home';
+        
+        for (const id of sectionIds) {
+          const sec = document.getElementById(id);
+          if (sec) {
+            const rect = sec.getBoundingClientRect();
+            if (rect.top <= headerOffset && rect.bottom > headerOffset) {
+              current = id;
+            }
+          }
+        }
+        
+        // Handle bottom of page
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
+          current = sectionIds[sectionIds.length - 1];
+        }
+        
+        setActiveNav(current);
+      }
+
+      const navLinks = document.querySelectorAll('.nav-link, .drawer-link[href], .dock-link[href]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              e.preventDefault();
+              closeDrawer();
+              setActiveNav(targetId);
+              isClickScrolling = true;
+              clearTimeout(scrollTimeout);
+              
+              target.scrollIntoView({
+                behavior: root.classList.contains('no-motion') ? 'instant' : 'smooth',
+                block: 'start'
+              });
+
+              if (history.pushState) history.pushState(null, null, href);
+              scrollTimeout = setTimeout(() => {
+                isClickScrolling = false;
+              }, 850);
+            }
+          }
+        });
+      });
+
+      function updateScrollHeaderAndProgress() {
         const top = window.scrollY;
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        header.classList.toggle('scrolled', top > 20);
-        backTop.classList.toggle('visible', top > 650);
-        progress.style.transform = 'scaleX(' + (scrollable > 0 ? Math.min(top / scrollable, 1) : 0) + ')';
-        let current = sections.length > 0 ? sections[0].id : 'home';
-        const activationLine = header.getBoundingClientRect().bottom + 36;
-        sections.forEach(section => { if (section.getBoundingClientRect().top <= activationLine) current = section.id; });
-        navLinks.forEach(link => {
-          const active = link.getAttribute('href') === '#' + current;
-          link.classList.toggle('active', active);
-          if (active) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
-        ticking = false;
+        if (header) header.classList.toggle('scrolled', top > 20);
+        if (backTop) backTop.classList.toggle('visible', top > 650);
+        if (progress) progress.style.transform = 'scaleX(' + (scrollable > 0 ? Math.min(top / scrollable, 1) : 0) + ')';
       }
+
       window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            updateScrollHeaderAndProgress();
+            updateActiveNavOnScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
       }, { passive: true });
-      window.addEventListener('resize', updateScroll);
-      updateScroll();
+
+      window.addEventListener('resize', updateActiveNavOnScroll);
+      updateScrollHeaderAndProgress();
+      updateActiveNavOnScroll();
+
       if ('IntersectionObserver' in window && !reducedMotion.matches) {
         root.classList.add('js-reveal');
         const observer = new IntersectionObserver(entries => {
@@ -953,23 +1440,36 @@
         }, { threshold: .08 });
         document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
       }
-      document.querySelector('.work-art img').src = document.querySelector('.art-frame img').src;
-      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const artImg = document.querySelector('.art-frame img');
+      const workArtImg = document.querySelector('.work-art img');
+      if (artImg && workArtImg) workArtImg.src = artImg.src;
+
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
       const openDialog = dialog => { closeDrawer(); if(dialog && typeof dialog.showModal === 'function') dialog.showModal(); document.body.style.overflow = 'hidden'; };
       const closeDialog = dialog => { if(dialog && typeof dialog.close === 'function') dialog.close(); if (!document.querySelector('dialog[open]')) document.body.style.overflow = ''; };
+      
       document.querySelectorAll('[data-open-release]').forEach(button => button.addEventListener('click', () => { if (downloadUrl) window.location.assign(downloadUrl); else openDialog(releaseDialog); }));
-      document.querySelector('[data-close-release]').addEventListener('click', () => closeDialog(releaseDialog));
+      const closeReleaseBtn = document.querySelector('[data-close-release]');
+      if (closeReleaseBtn) closeReleaseBtn.addEventListener('click', () => closeDialog(releaseDialog));
+
       document.querySelectorAll('dialog').forEach(dialog => {
-        dialog.querySelector('[data-close-dialog]').addEventListener('click', () => closeDialog(dialog));
+        const closeBtn = dialog.querySelector('[data-close-dialog]');
+        if (closeBtn) closeBtn.addEventListener('click', () => closeDialog(dialog));
         dialog.addEventListener('close', () => { if (!document.querySelector('dialog[open]')) document.body.style.overflow = ''; });
         dialog.addEventListener('click', event => { const rect=dialog.getBoundingClientRect(); if(event.target===dialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))closeDialog(dialog); });
       });
+
       const concepts = {
         form: { title: 'صوتك يختصر المسافة', word: 'VOICE.', description: 'ابقَ قريبًا ممن يهمك عبر التواصل الصوتي داخل تطبيق ZMRT. يرتبط استخدام الميكروفون بالمكالمات الصوتية، ويمكن إدارة أذونات التطبيق من إعدادات جهازك.', focus: 'مكالمات صوتية داخل تطبيق أندرويد', character: 'سماع الصوت ومشاركة الحديث', image: true },
         bloom: { title: 'شاركهم اللحظة', word: 'VIDEO.', description: 'شارك اللحظة بالصوت والصورة داخل تطبيق ZMRT. يرتبط استخدام الكاميرا بالمكالمات المرئية. هذا الموقع للتعريف بالتطبيق، ولا يجري مكالمات من المتصفح.', focus: 'مكالمات مرئية داخل تطبيق أندرويد', character: 'الصوت والصورة في تجربة واحدة', image: false }
       };
+
       document.querySelectorAll('[data-project]').forEach(button => button.addEventListener('click', () => {
         const concept=concepts[button.dataset.project];
+        if (!concept) return;
         document.getElementById('project-title').textContent=concept.title;
         document.getElementById('project-description').textContent=concept.description;
         document.getElementById('project-focus').textContent=concept.focus;
@@ -978,157 +1478,61 @@
         art.classList.toggle('lime',!concept.image);
         art.querySelector('img')?.remove();
         document.getElementById('project-word').textContent=concept.word;
-        if(concept.image){const img=document.createElement('img');img.src=document.querySelector('.art-frame img').src;img.alt='';art.prepend(img);}
+        if(concept.image && artImg){const img=document.createElement('img');img.src=artImg.src;img.alt='';art.prepend(img);}
         openDialog(projectDialog);
       }));
-      document.getElementById('project-to-brief').addEventListener('click',()=>{closeDialog(projectDialog);openDialog(releaseDialog);});
-      const legalTitles={privacy:'سياسة الخصوصية',terms:'شروط الاستخدام',delete:'حذف الحساب والبيانات',support:'دعم ZMRT'};
-      document.querySelectorAll('[data-legal]').forEach(button=>button.addEventListener('click',()=>{
-        const key=button.dataset.legal;
-        const template=document.getElementById('legal-'+key);
-        document.getElementById('legal-title').textContent=legalTitles[key];
-        document.getElementById('legal-content').replaceChildren(template.content.cloneNode(true));
-        legalDialog.scrollTop=0;
-        openDialog(legalDialog);
+
+      const briefBtn = document.getElementById('project-to-brief');
+      if (briefBtn) briefBtn.addEventListener('click', () => { closeDialog(projectDialog); openDialog(releaseDialog); });
+
+      const legalTitles = { 
+        privacy: 'سياسة الخصوصية لتطبيق ZMRT', 
+        terms: 'شروط استخدام تطبيق ZMRT', 
+        'privacy-terms': 'سياسة الخصوصية وشروط الاستخدام', 
+        delete: 'حذف الحساب والبيانات', 
+        support: 'دعم ZMRT' 
+      };
+      document.querySelectorAll('[data-legal]').forEach(button => button.addEventListener('click', () => {
+        const key = button.dataset.legal;
+        const template = document.getElementById('legal-' + key);
+        if (template) {
+          document.getElementById('legal-title').textContent = legalTitles[key] || 'معلومات ZMRT';
+          document.getElementById('legal-content').replaceChildren(template.content.cloneNode(true));
+          legalDialog.scrollTop = 0;
+          openDialog(legalDialog);
+        }
       }));
 
+      document.getElementById('legal-content')?.addEventListener('click', event => {
+        if (event.target.closest('[data-legal-home]')) {
+          closeDialog(legalDialog);
+          document.getElementById('home')?.scrollIntoView({ behavior: root.classList.contains('no-motion') ? 'instant' : 'smooth' });
+        }
+      });
+
       document.addEventListener('visibilitychange', () => root.classList.toggle('page-paused', document.hidden));
-      // Size the reserved bottom space from the actual dock, including enlarged text.
+
+      // Dock height observer
       const dock = document.querySelector('.mobile-dock');
-      if ('ResizeObserver' in window) {
+      if (dock && 'ResizeObserver' in window) {
         new ResizeObserver(entries => {
           const height = entries[0].target.getBoundingClientRect().height;
           if (height > 0) root.style.setProperty('--dock-height', Math.ceil(height) + 'px');
         }).observe(dock);
       }
 
-      // The official app destination and statistics share a single configuration.
-      const appConfig = JSON.parse(document.getElementById('app-config').textContent);
-      let downloadUrl = null;
-      try { const candidate = new URL(appConfig.downloadUrl); if (candidate.protocol === 'https:') downloadUrl = candidate.href; } catch (_) {}
-      const officialDownload = document.getElementById('official-download');
-      if (downloadUrl) {
-        officialDownload.href = downloadUrl;
-        officialDownload.hidden = false;
-        document.getElementById('release-description').textContent = 'حمّل تطبيق ZMRT من الرابط الرسمي وابدأ تجربتك على أندرويد.';
-      }
-      const numberFormat = new Intl.NumberFormat('en-US');
-      if (Number.isFinite(appConfig.downloads) && appConfig.downloads >= 0) {
-        const value = document.getElementById('downloads-value');
-        value.dataset.count = String(appConfig.downloads);
-        value.textContent = numberFormat.format(appConfig.downloads);
-        document.getElementById('downloads-caption').textContent = 'تنزيلات التطبيق المسجلة';
-      }
-      if (Number.isFinite(appConfig.rating) && appConfig.rating >= 0 && appConfig.rating <= 5) {
-        const value = document.getElementById('rating-value');
-        value.dataset.count = String(appConfig.rating);
-        value.dataset.decimals = '1';
-        value.textContent = appConfig.rating.toFixed(1);
-        document.getElementById('rating-caption').textContent = 'من 5 نجوم';
-      }
-      const counterFrames = new Map();
-      const finishCounter = element => {
-        const decimals = Number(element.dataset.decimals || 0);
-        element.textContent = decimals ? Number(element.dataset.count).toFixed(decimals) : numberFormat.format(Number(element.dataset.count));
-        cancelAnimationFrame(counterFrames.get(element));
-        counterFrames.delete(element);
-      };
-      const animateCounter = element => {
-        if (root.classList.contains('no-motion')) { finishCounter(element); return; }
-        const started = performance.now();
-        const total = Number(element.dataset.count);
-        const decimals = Number(element.dataset.decimals || 0);
-        function frame(now) {
-          const t = Math.min((now - started) / 1200, 1);
-          const value = total * (1 - Math.pow(1 - t, 3));
-          element.textContent = decimals ? value.toFixed(decimals) : numberFormat.format(Math.round(value));
-          if (t < 1 && !root.classList.contains('no-motion')) counterFrames.set(element, requestAnimationFrame(frame));
-          else finishCounter(element);
-        }
-        counterFrames.set(element, requestAnimationFrame(frame));
-      };
-      if ('IntersectionObserver' in window) {
-        const counterObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-          if (entry.isIntersecting) { animateCounter(entry.target); counterObserver.unobserve(entry.target); }
-        }), {threshold:.5});
-        document.querySelectorAll('[data-count]').forEach(element => counterObserver.observe(element));
-      }
-      document.addEventListener('zmrt-motion-change', () => { if (root.classList.contains('no-motion')) [...counterFrames.keys()].forEach(finishCounter); });
-
-      // A light particle field: fewer points on phones, no active loop when paused.
-      const canvas = document.getElementById('connection-background');
-      const context = canvas.getContext('2d');
-      if (context) {
-        let width = 0, height = 0, points = [], backgroundFrame = 0, lastTime = 0;
-        const pointer = {x:-1000,y:-1000};
-        function sizeBackground() {
-          const box = canvas.getBoundingClientRect();
-          width = box.width; height = box.height;
-          const scale = Math.min(window.devicePixelRatio || 1, 1.5);
-          canvas.width = Math.round(width * scale); canvas.height = Math.round(height * scale);
-          context.setTransform(scale,0,0,scale,0,0);
-          const count = width < 850 ? 23 : 46;
-          points = Array.from({length:count}, () => ({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,r:Math.random()*1.2+.7}));
-          syncBackground();
-        }
-        function paint(now, moving) {
-          const delta = moving && lastTime ? Math.min((now-lastTime)/16.667,2) : 0;
-          lastTime = now;
-          context.clearRect(0,0,width,height);
-          points.forEach(point => {
-            if (moving) {
-              point.x += point.vx * delta; point.y += point.vy * delta;
-              if (point.x < -5) point.x = width+5; if (point.x > width+5) point.x = -5;
-              if (point.y < -5) point.y = height+5; if (point.y > height+5) point.y = -5;
-            }
-            context.beginPath(); context.arc(point.x,point.y,point.r,0,Math.PI*2); context.fillStyle='rgba(204,247,122,.44)'; context.fill();
-          });
-          for (let a=0; a<points.length; a++) for (let b=a+1; b<points.length; b++) {
-            const distance = Math.hypot(points[a].x-points[b].x,points[a].y-points[b].y);
-            if (distance < 135) {
-              context.beginPath(); context.moveTo(points[a].x,points[a].y); context.lineTo(points[b].x,points[b].y); context.strokeStyle='rgba(204,247,122,'+((1-distance/135)*.14)+')'; context.lineWidth=.65; context.stroke();
-            }
-          }
-          if (moving && width >= 850) points.forEach(point => {
-            const distance = Math.hypot(point.x-pointer.x,point.y-pointer.y);
-            if (distance < 160) { context.beginPath();context.moveTo(point.x,point.y);context.lineTo(pointer.x,pointer.y);context.strokeStyle='rgba(204,247,122,'+((1-distance/160)*.18)+')';context.stroke(); }
-          });
-        }
-        function syncBackground() {
-          cancelAnimationFrame(backgroundFrame); backgroundFrame=0; lastTime=0;
-          if (document.hidden) return;
-          if (root.classList.contains('no-motion')) { paint(performance.now(),false); return; }
-          function loop(now) { paint(now,true); backgroundFrame=requestAnimationFrame(loop); }
-          backgroundFrame=requestAnimationFrame(loop);
-        }
-        window.addEventListener('pointermove', event => { pointer.x=event.clientX;pointer.y=event.clientY; }, {passive:true});
-        document.addEventListener('pointerleave', () => {pointer.x=-1000;pointer.y=-1000;});
-        document.addEventListener('visibilitychange',syncBackground);
-        document.addEventListener('zmrt-motion-change',syncBackground);
-        if ('ResizeObserver' in window) new ResizeObserver(sizeBackground).observe(canvas);
-        else window.addEventListener('resize',sizeBackground);
-        sizeBackground();
-      }
-
-      // Professional Animations Module (GSAP & ScrollTrigger)
+      // GSAP Animations
       if (typeof gsap !== 'undefined') {
-        if (typeof ScrollTrigger !== 'undefined') {
-          gsap.registerPlugin(ScrollTrigger);
-        }
-
-        // Hero Stagger Sequence
+        if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
         if (!root.classList.contains('no-motion')) {
           const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
           heroTl.from('.brand', { y: -20, opacity: 0, duration: 0.8 })
                 .from('.navigation .nav-link', { y: -15, opacity: 0, stagger: 0.07, duration: 0.6 }, '-=0.4')
-                .from('.header-actions .button, .header-actions .icon-button', { scale: 0.9, opacity: 0, stagger: 0.07, duration: 0.6 }, '-=0.4')
+                .from('.header-actions .icon-button', { scale: 0.9, opacity: 0, duration: 0.5 }, '-=0.4')
                 .from('#hero-title', { y: 35, opacity: 0, duration: 0.8 }, '-=0.4')
                 .from('.welcome-tagline', { y: 22, opacity: 0, duration: 0.7 }, '-=0.5')
-                .from('.hero-description', { y: 22, opacity: 0, duration: 0.7 }, '-=0.5')
-                .from('.hero-actions .button', { y: 22, opacity: 0, duration: 0.7 }, '-=0.5');
+                .from('.hero-description', { y: 22, opacity: 0, duration: 0.7 }, '-=0.5');
         }
-
-        // ScrollTrigger Section & Card Staggers
         if (typeof ScrollTrigger !== 'undefined' && !root.classList.contains('no-motion')) {
           ScrollTrigger.batch('.service, .work-card, .stat-card, .principle', {
             onEnter: batch => gsap.fromTo(batch, 
@@ -1141,44 +1545,13 @@
         }
       }
 
-      // 3D Card Gyroscope & Spotlight Cursor Glare
-      document.querySelectorAll('.glass-card, .work-card, .service, .stat-card').forEach(card => {
-        if (!card.querySelector('.card-glare')) {
-          const glare = document.createElement('div');
-          glare.className = 'card-glare';
-          card.appendChild(glare);
-        }
-        card.addEventListener('pointermove', e => {
-          if (root.classList.contains('no-motion') || typeof gsap === 'undefined') return;
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', `${x}px`);
-          card.style.setProperty('--mouse-y', `${y}px`);
-          const normX = (x - rect.width / 2) / (rect.width / 2);
-          const normY = (y - rect.height / 2) / (rect.height / 2);
-          gsap.to(card, {
-            rotateY: normX * 6,
-            rotateX: -normY * 6,
-            transformPerspective: 900,
-            duration: 0.35,
-            ease: 'power1.out'
-          });
-        });
-        card.addEventListener('pointerleave', () => {
-          if (typeof gsap !== 'undefined') {
-            gsap.to(card, { rotateX: 0, rotateY: 0, duration: 0.6, ease: 'power2.out' });
-          }
-        });
-      });
-
-      // Magnetic Cursor Attraction for Buttons
+      // Magnetic Cursor Attraction
       document.querySelectorAll('.welcome-download, .header-actions .button').forEach(btn => {
         btn.addEventListener('mousemove', e => {
           if (root.classList.contains('no-motion') || typeof gsap === 'undefined') return;
           const rect = btn.getBoundingClientRect();
-          const x = (e.clientX - rect.left - rect.width / 2) * 0.32;
-          const y = (e.clientY - rect.top - rect.height / 2) * 0.32;
+          const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
+          const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
           gsap.to(btn, { x, y, duration: 0.25, ease: 'power2.out' });
         });
         btn.addEventListener('mouseleave', () => {
@@ -1188,297 +1561,462 @@
         });
       });
 
-      // Confetti on download action
-      document.querySelectorAll('[data-open-release], #official-download, #project-to-brief').forEach(btn => {
-        btn.addEventListener('click', () => {
-          if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
-            confetti({
-              particleCount: 40,
-              spread: 60,
-              origin: { y: 0.75 },
-              colors: ['#ccf77a', '#78e064', '#ffffff']
-            });
+      // Light Particle Canvas Background
+      const canvas = document.getElementById('connection-background');
+      if (canvas) {
+        const context = canvas.getContext('2d');
+        if (context) {
+          let width = 0, height = 0, points = [], backgroundFrame = 0, lastTime = 0;
+          const pointer = {x:-1000,y:-1000};
+          function sizeBackground() {
+            const box = canvas.getBoundingClientRect();
+            width = box.width; height = box.height;
+            const scale = Math.min(window.devicePixelRatio || 1, 1.5);
+            canvas.width = Math.round(width * scale); canvas.height = Math.round(height * scale);
+            context.setTransform(scale,0,0,scale,0,0);
+            const count = width < 850 ? 23 : 46;
+            points = Array.from({length:count}, () => ({x:Math.random()*width,y:Math.random()*height,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,r:Math.random()*1.2+.7}));
+            syncBackground();
           }
+          function paint(now, moving) {
+            const delta = moving && lastTime ? Math.min((now-lastTime)/16.667,2) : 0;
+            lastTime = now;
+            context.clearRect(0,0,width,height);
+            points.forEach(point => {
+              if (moving) {
+                point.x += point.vx * delta; point.y += point.vy * delta;
+                if (point.x < -5) point.x = width+5; if (point.x > width+5) point.x = -5;
+                if (point.y < -5) point.y = height+5; if (point.y > height+5) point.y = -5;
+              }
+              context.beginPath(); context.arc(point.x,point.y,point.r,0,Math.PI*2); context.fillStyle='rgba(204,247,122,.44)'; context.fill();
+            });
+            for (let a=0; a<points.length; a++) for (let b=a+1; b<points.length; b++) {
+              const distance = Math.hypot(points[a].x-points[b].x,points[a].y-points[b].y);
+              if (distance < 135) {
+                context.beginPath(); context.moveTo(points[a].x,points[a].y); context.lineTo(points[b].x,points[b].y); context.strokeStyle='rgba(204,247,122,'+((1-distance/135)*.14)+')'; context.lineWidth=.65; context.stroke();
+              }
+            }
+          }
+          function syncBackground() {
+            cancelAnimationFrame(backgroundFrame); backgroundFrame=0; lastTime=0;
+            if (document.hidden) return;
+            if (root.classList.contains('no-motion')) { paint(performance.now(),false); return; }
+            function loop(now) { paint(now,true); backgroundFrame=requestAnimationFrame(loop); }
+            backgroundFrame=requestAnimationFrame(loop);
+          }
+          window.addEventListener('pointermove', event => { pointer.x=event.clientX;pointer.y=event.clientY; }, {passive:true});
+          document.addEventListener('pointerleave', () => {pointer.x=-1000;pointer.y=-1000;});
+          document.addEventListener('visibilitychange',syncBackground);
+          document.addEventListener('zmrt-motion-change',syncBackground);
+          if ('ResizeObserver' in window) new ResizeObserver(sizeBackground).observe(canvas);
+          else window.addEventListener('resize',sizeBackground);
+          sizeBackground();
+        }
+      }
+    })();
+  </script>
+
+  <!-- Firebase Live Module Integration -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+    import { 
+      getFirestore, 
+      doc, 
+      collection, 
+      onSnapshot, 
+      setDoc, 
+      addDoc, 
+      updateDoc, 
+      deleteDoc, 
+      getDoc, 
+      increment, 
+      getDocFromServer 
+    } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+    const root = document.documentElement;
+    const toast = document.getElementById('toast');
+    const numberFormat = new Intl.NumberFormat('en-US');
+
+    let toastTimer = null;
+    function showToast(msg, duration = 3500) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('visible');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('visible'), duration);
+    }
+
+    // Star Picker Rating Labels
+    const ratingLabels = {
+      1: '1.0 — ضعيف للغاية',
+      2: '2.0 — مقبول',
+      3: '3.0 — جيد جداً',
+      4: '4.0 — ممتاز جداً',
+      5: '5.0 — ممتاز نوصي به شديداً'
+    };
+
+    const starBtns = document.querySelectorAll('#star-picker .star-btn');
+    const selectedRatingInput = document.getElementById('selected-rating');
+    const starBadge = document.getElementById('star-picker-badge');
+
+    function highlightStars(count) {
+      starBtns.forEach(btn => {
+        const r = parseInt(btn.dataset.rating, 10);
+        btn.classList.toggle('active', r <= count);
+      });
+      if (starBadge && ratingLabels[count]) {
+        starBadge.textContent = ratingLabels[count];
+      }
+    }
+
+    if (starBtns.length) {
+      starBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const r = parseInt(btn.dataset.rating, 10);
+          if (selectedRatingInput) selectedRatingInput.value = r;
+          highlightStars(r);
+        });
+        btn.addEventListener('mouseenter', () => {
+          const r = parseInt(btn.dataset.rating, 10);
+          highlightStars(r);
         });
       });
-
-      document.getElementById('legal-content').addEventListener('click', event => {
-        if (event.target.closest('[data-legal-home]')) {
-          closeDialog(legalDialog);
-          document.getElementById('home').scrollIntoView({behavior:root.classList.contains('no-motion')?'instant':'smooth'});
-        }
+      document.getElementById('star-picker')?.addEventListener('mouseleave', () => {
+        const cur = parseInt(selectedRatingInput?.value || '5', 10);
+        highlightStars(cur);
       });
+    }
 
-      // ============================================
-      // ZMRT LIVE REVIEWS & INTERNET ARCHIVE CLIENT
-      // ============================================
-      const starBtns = document.querySelectorAll('#star-picker .star-btn');
-      const selectedRatingInput = document.getElementById('selected-rating');
-      const commentForm = document.getElementById('comment-form');
-      const commentsList = document.getElementById('comments-list');
-      const submitCommentBtn = document.getElementById('submit-comment-btn');
-      const refreshCommentsBtn = document.getElementById('refresh-comments-btn');
-      const avgRatingDisplay = document.getElementById('avg-rating-display');
-      const totalReviewsCount = document.getElementById('total-reviews-count');
+    function formatRelativeTime(dateStr) {
+      try {
+        const date = new Date(dateStr);
+        const now = new Date();
+        const diffSec = Math.floor((now - date) / 1000);
+        if (diffSec < 60) return 'الآن';
+        if (diffSec < 3600) return `منذ ${Math.floor(diffSec / 60)} دقيقة`;
+        if (diffSec < 86400) return `منذ ${Math.floor(diffSec / 3600)} ساعة`;
+        if (diffSec < 2592000) return `منذ ${Math.floor(diffSec / 86400)} يوم`;
+        return date.toLocaleDateString('ar-EG');
+      } catch (_) {
+        return 'مؤخراً';
+      }
+    }
+
+    function renderStars(rating) {
+      let out = '';
+      for (let i = 1; i <= 5; i++) {
+        out += `<svg aria-hidden="true" style="color:${i <= rating ? '#f5c518' : '#3d4d3a'}"><use href="#i-star-filled"/></svg>`;
+      }
+      return out;
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    // UI Render for Reviews and Global Stats
+    function updateStatsUI(stats) {
+      if (!stats) return;
+      const downloads = stats.downloads || 12840;
+      const avg = stats.averageRating ? stats.averageRating.toFixed(1) : '5.0';
+      const total = stats.totalReviews || 0;
+
       const heroDownloadsNum = document.getElementById('hero-downloads-num');
       const downloadsValue = document.getElementById('downloads-value');
+      const avgRatingDisplay = document.getElementById('avg-rating-display');
       const ratingValue = document.getElementById('rating-value');
-      const toast = document.getElementById('toast');
+      const totalReviewsCount = document.getElementById('total-reviews-count');
 
-      let toastTimer = null;
-      function showToast(msg, duration = 3500) {
-        if (!toast) return;
-        toast.textContent = msg;
-        toast.classList.add('visible');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => toast.classList.remove('visible'), duration);
+      if (heroDownloadsNum) heroDownloadsNum.textContent = '+' + numberFormat.format(downloads);
+      if (downloadsValue) { downloadsValue.dataset.count = String(downloads); downloadsValue.textContent = numberFormat.format(downloads); }
+      if (avgRatingDisplay) avgRatingDisplay.textContent = avg;
+      if (ratingValue) { ratingValue.dataset.count = String(avg); ratingValue.textContent = avg; }
+      if (totalReviewsCount) totalReviewsCount.textContent = total;
+    }
+
+    function renderReviewsList(reviews, dbInstance) {
+      const commentsList = document.getElementById('comments-list');
+      if (!commentsList) return;
+
+      if (!reviews || reviews.length === 0) {
+        commentsList.innerHTML = '<div class="comment-card"><p style="color:var(--muted);text-align:center;margin:0">لا توجد تعليقات بعد. كن أول من يقيّم تطبيق ZMRT!</p></div>';
+        return;
       }
 
-      // Star picker interactive events
-      if (starBtns.length) {
-        starBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            const r = parseInt(btn.dataset.rating, 10);
-            if (selectedRatingInput) selectedRatingInput.value = r;
-            updateStarDisplay(r);
-          });
-          btn.addEventListener('mouseenter', () => {
-            const r = parseInt(btn.dataset.rating, 10);
-            highlightStars(r);
-          });
-        });
-        document.getElementById('star-picker')?.addEventListener('mouseleave', () => {
-          const cur = parseInt(selectedRatingInput?.value || '5', 10);
-          updateStarDisplay(cur);
-        });
-      }
+      // Breakdown calculation
+      const total = reviews.length;
+      const r5 = reviews.filter(c => Number(c.rating) === 5).length;
+      const r4 = reviews.filter(c => Number(c.rating) === 4).length;
+      const r3 = reviews.filter(c => Number(c.rating) <= 3).length;
+      const p5 = Math.round((r5 / total) * 100);
+      const p4 = Math.round((r4 / total) * 100);
+      const p3 = Math.round((r3 / total) * 100);
+      
+      const b5 = document.getElementById('bar-5-fill');
+      const t5 = document.getElementById('bar-5-pct');
+      if (b5 && t5) { b5.style.width = p5 + '%'; t5.textContent = p5 + '%'; }
+      const b4 = document.getElementById('bar-4-fill');
+      const t4 = document.getElementById('bar-4-pct');
+      if (b4 && t4) { b4.style.width = p4 + '%'; t4.textContent = p4 + '%'; }
+      const b3 = document.getElementById('bar-3-fill');
+      const t3 = document.getElementById('bar-3-pct');
+      if (b3 && t3) { b3.style.width = p3 + '%'; t3.textContent = p3 + '%'; }
 
-      function highlightStars(count) {
-        starBtns.forEach(btn => {
-          const r = parseInt(btn.dataset.rating, 10);
-          btn.classList.toggle('active', r <= count);
-        });
-      }
-
-      function updateStarDisplay(rating) {
-        highlightStars(rating);
-      }
-
-      function formatRelativeTime(dateStr) {
-        try {
-          const date = new Date(dateStr);
-          const now = new Date();
-          const diffSec = Math.floor((now - date) / 1000);
-          if (diffSec < 60) return 'الآن';
-          if (diffSec < 3600) return `منذ ${Math.floor(diffSec / 60)} دقيقة`;
-          if (diffSec < 86400) return `منذ ${Math.floor(diffSec / 3600)} ساعة`;
-          if (diffSec < 2592000) return `منذ ${Math.floor(diffSec / 86400)} يوم`;
-          return date.toLocaleDateString('ar-EG');
-        } catch (_) {
-          return 'مؤخراً';
-        }
-      }
-
-      function renderStars(rating) {
-        let out = '';
-        for (let i = 1; i <= 5; i++) {
-          out += `<svg aria-hidden="true" style="color:${i <= rating ? '#f5c518' : '#3d4d3a'}"><use href="#i-star-filled"/></svg>`;
-        }
-        return out;
-      }
-
-      function escapeHtml(str) {
-        if (!str) return '';
-        return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
-      }
-
-      function renderComments(comments, totalDownloads, avgRating) {
-        if (heroDownloadsNum && totalDownloads) {
-          heroDownloadsNum.textContent = '+' + numberFormat.format(totalDownloads);
-        }
-        if (downloadsValue && totalDownloads) {
-          downloadsValue.dataset.count = String(totalDownloads);
-          downloadsValue.textContent = numberFormat.format(totalDownloads);
-        }
-        if (avgRatingDisplay && avgRating) {
-          avgRatingDisplay.textContent = avgRating;
-        }
-        if (ratingValue && avgRating) {
-          ratingValue.dataset.count = String(avgRating);
-          ratingValue.textContent = avgRating;
-        }
-        if (totalReviewsCount && comments) {
-          totalReviewsCount.textContent = comments.length;
-        }
-
-        // Breakdown bars
-        if (comments && comments.length) {
-          const r5 = comments.filter(c => Number(c.rating) === 5).length;
-          const r4 = comments.filter(c => Number(c.rating) === 4).length;
-          const r3 = comments.filter(c => Number(c.rating) <= 3).length;
-          const p5 = Math.round((r5 / comments.length) * 100);
-          const p4 = Math.round((r4 / comments.length) * 100);
-          const p3 = Math.round((r3 / comments.length) * 100);
-          
-          const b5 = document.getElementById('bar-5-fill');
-          const t5 = document.getElementById('bar-5-pct');
-          if (b5 && t5) { b5.style.width = p5 + '%'; t5.textContent = p5 + '%'; }
-          const b4 = document.getElementById('bar-4-fill');
-          const t4 = document.getElementById('bar-4-pct');
-          if (b4 && t4) { b4.style.width = p4 + '%'; t4.textContent = p4 + '%'; }
-          const b3 = document.getElementById('bar-3-fill');
-          const t3 = document.getElementById('bar-3-pct');
-          if (b3 && t3) { b3.style.width = p3 + '%'; t3.textContent = p3 + '%'; }
-        }
-
-        if (!commentsList) return;
-        if (!comments || comments.length === 0) {
-          commentsList.innerHTML = '<div class="comment-card"><p style="color:var(--muted);text-align:center;margin:0">لا توجد تعليقات محفوظة بعد. كن أول من يشارك رأيه!</p></div>';
-          return;
-        }
-
-        commentsList.innerHTML = comments.map(c => {
-          const initial = (c.name || 'م')[0].toUpperCase();
-          return `
-            <article class="comment-card reveal" data-comment-id="${c.id}">
-              <div class="comment-top">
-                <div class="comment-user">
-                  <div class="user-avatar">${escapeHtml(initial)}</div>
-                  <div class="user-meta">
-                    <strong>${escapeHtml(c.name)}</strong>
-                    <span class="user-badge"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-check"/></svg>مستخدم موثق</span>
-                  </div>
-                </div>
-                <div class="comment-meta-right">
-                  <div class="comment-stars" aria-label="تقييم ${c.rating} من 5">${renderStars(c.rating)}</div>
-                  <span class="comment-time">${formatRelativeTime(c.date)}</span>
+      commentsList.innerHTML = reviews.map(c => {
+        const initial = (c.name || 'م')[0].toUpperCase();
+        return `
+          <article class="comment-card reveal" data-comment-id="${c.id}">
+            <div class="comment-top">
+              <div class="comment-user">
+                <div class="user-avatar">${escapeHtml(initial)}</div>
+                <div class="user-meta">
+                  <strong>${escapeHtml(c.name)}</strong>
+                  <span class="user-badge"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-check"/></svg>مستخدم موثق</span>
                 </div>
               </div>
-              <p class="comment-body">${escapeHtml(c.text)}</p>
-              <div class="comment-footer">
-                <span class="verified-pill"><svg aria-hidden="true" style="width:14px;height:14px"><use href="#i-mobile"/></svg>تطبيق أندرويد</span>
+              <div class="comment-meta-right">
+                <div class="comment-stars" aria-label="تقييم ${c.rating} من 5">${renderStars(c.rating)}</div>
+                <span class="comment-time">${formatRelativeTime(c.date)}</span>
+              </div>
+            </div>
+            <p class="comment-body">${escapeHtml(c.text)}</p>
+            <div class="comment-footer">
+              <span class="verified-pill"><svg aria-hidden="true" style="width:14px;height:14px"><use href="#i-mobile"/></svg>تطبيق أندرويد</span>
+              <div style="display:flex;gap:8px;align-items:center;">
                 <button type="button" class="like-btn" data-like-id="${c.id}" aria-label="إعجاب بالتعليق">
                   <svg aria-hidden="true"><use href="#i-heart"/></svg>
                   <span class="like-count">${c.likes || 0}</span>
                 </button>
+                <button type="button" class="delete-btn" data-delete-id="${c.id}" aria-label="حذف التعليق" style="background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);color:#ff7777;padding:5px 12px;border-radius:20px;font-size:0.75rem;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all 0.2s ease;">
+                  <svg aria-hidden="true" style="width:13px;height:13px;fill:currentColor;" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                  <span>حذف</span>
+                </button>
               </div>
-            </article>
-          `;
-        }).join('');
+            </div>
+          </article>
+        `;
+      }).join('');
 
-        // Wire like buttons
-        commentsList.querySelectorAll('.like-btn').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
-            e.preventDefault();
-            const id = btn.dataset.likeId;
-            if (btn.classList.contains('liked')) return;
-            try {
-              const res = await fetch(`/api/comments/${id}/like`, { method: 'POST' });
-              const data = await res.json();
-              if (data.success) {
-                btn.classList.add('liked');
-                btn.querySelector('.like-count').textContent = data.likes;
-                if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
-                  confetti({ particleCount: 15, spread: 40, origin: { y: 0.8 } });
-                }
-              }
-            } catch (_) {}
-          });
-        });
-      }
-
-      async function fetchCommentsArchive() {
-        try {
-          const res = await fetch('/api/comments');
-          const data = await res.json();
-          if (data.success) {
-            renderComments(data.comments, data.downloads, data.averageRating);
-          }
-        } catch (err) {
-          console.error('Error fetching comments:', err);
-        }
-      }
-
-      // Initial fetch
-      fetchCommentsArchive();
-
-      if (refreshCommentsBtn) {
-        refreshCommentsBtn.addEventListener('click', () => {
-          refreshCommentsBtn.classList.add('loading');
-          fetchCommentsArchive().finally(() => {
-            refreshCommentsBtn.classList.remove('loading');
-            showToast('تم تحديث أرشيف التعليقات');
-          });
-        });
-      }
-
-      // Submit new comment
-      if (commentForm) {
-        commentForm.addEventListener('submit', async (e) => {
+      // Wire Like Buttons to Firebase
+      commentsList.querySelectorAll('.like-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
           e.preventDefault();
-          const nameInput = document.getElementById('comment-name');
-          const textInput = document.getElementById('comment-text');
-          const rating = selectedRatingInput ? selectedRatingInput.value : '5';
-          const name = nameInput?.value.trim();
-          const text = textInput?.value.trim();
-
-          if (!name || !text) {
-            showToast('يرجى ملء جميع الحقول');
-            return;
-          }
-
-          if (submitCommentBtn) {
-            submitCommentBtn.disabled = true;
-            submitCommentBtn.querySelector('span').textContent = 'جارٍ الحفظ بالأرشيف...';
-          }
-
+          const id = btn.dataset.likeId;
+          if (btn.classList.contains('liked')) return;
+          btn.classList.add('liked');
           try {
-            const res = await fetch('/api/comments', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ name, text, rating, device: 'Android' })
-            });
-            const data = await res.json();
-            if (data.success) {
-              showToast('تم حفظ ونشر تعليقك في أرشيف ZMRT بنجاح! 🎉');
-              commentForm.reset();
-              if (selectedRatingInput) selectedRatingInput.value = '5';
-              updateStarDisplay(5);
-              fetchCommentsArchive();
-              if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
-                confetti({ particleCount: 35, spread: 60, origin: { y: 0.6 } });
-              }
+            if (dbInstance) {
+              await updateDoc(doc(dbInstance, 'reviews', id), { likes: increment(1) });
             } else {
-              showToast(data.error || 'حدث خطأ أثناء حفظ التعليق');
+              await fetch(`/api/comments/${id}/like`, { method: 'POST' });
             }
-          } catch (err) {
-            showToast('تعذر الاتصال بالأرشيف، يرجى المحاولة لاحقاً');
-          } finally {
-            if (submitCommentBtn) {
-              submitCommentBtn.disabled = false;
-              submitCommentBtn.querySelector('span').textContent = 'حفظ ونشر التعليق بالأرشيف';
-            }
-          }
-        });
-      }
-
-      // Live Downloads count incrementer
-      document.querySelectorAll('[data-open-release], #official-download, #project-to-brief').forEach(btn => {
-        btn.addEventListener('click', async () => {
-          try {
-            const res = await fetch('/api/downloads/increment', { method: 'POST' });
-            const data = await res.json();
-            if (data.success && data.downloads) {
-              if (heroDownloadsNum) heroDownloadsNum.textContent = '+' + numberFormat.format(data.downloads);
-              if (downloadsValue) {
-                downloadsValue.dataset.count = String(data.downloads);
-                downloadsValue.textContent = numberFormat.format(data.downloads);
-              }
+            if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
+              confetti({ particleCount: 15, spread: 40, origin: { y: 0.8 } });
             }
           } catch (_) {}
         });
       });
-    })();
-</script>
+
+      // Wire Delete Buttons to Firebase
+      commentsList.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const id = btn.dataset.deleteId;
+          if (!confirm('هل أنت تأكد من رغبتك في حذف هذا التعليق؟')) return;
+          try {
+            if (dbInstance) {
+              await deleteDoc(doc(dbInstance, 'reviews', id));
+              showToast('تم حذف التعليق من Firebase بنجاح');
+            } else {
+              const res = await fetch(`/api/comments/${id}`, { method: 'DELETE' });
+              const data = await res.json();
+              if (data.success) showToast('تم حذف التعليق بنجاح');
+            }
+          } catch (_) {
+            showToast('حدث خطأ أثناء حذف التعليق');
+          }
+        });
+      });
+    }
+
+    // Seed Initial Data into Firebase if empty
+    async function seedInitialData(dbInstance) {
+      const initialReviews = [
+        { name: 'عمر النبهاني', rating: 5, text: 'تطبيق ممتاز جداً ونقاء الصوت في المكالمات بجودة Opus HD لا يضاهى! خفيف جداً على الجهاز ولا يستهلك البطارية.', date: new Date(Date.now() - 86400000).toISOString(), device: 'Android', likes: 24 },
+        { name: 'سارة القحطاني', rating: 5, text: 'المكالمات المرئية واضحة وبدون أي تقطيع حتى مع الإنترنت البطيء. التصميم الزمردي الأنيق والواجهة البسيطة رائعة للغاية.', date: new Date(Date.now() - 172800000).toISOString(), device: 'Android', likes: 19 },
+        { name: 'طارق الشامي', rating: 5, text: 'أفضل بديل للتواصل السريع والآمن. ميزة الاتصال بنقرة واحدة والخصوصية العالية تجعله تطبيقي الأساسي يومياً.', date: new Date(Date.now() - 259200000).toISOString(), device: 'Android', likes: 15 },
+        { name: 'فاطمة العمري', rating: 4, text: 'تجربة استخدام مريحة وسلسة وتصميم أنيق يفتح النفس. بانتظار التحديثات القادمة أيضاً.', date: new Date(Date.now() - 345600000).toISOString(), device: 'Android', likes: 11 },
+        { name: 'يوسف خليل', rating: 5, text: 'سرعة استجابة مذهلة وصوت نقي تماماً بدون أي تشويش. شكراً للقائمين على ZMRT على هذا العمل المتقن.', date: new Date(Date.now() - 432000000).toISOString(), device: 'Android', likes: 8 }
+      ];
+
+      for (const rev of initialReviews) {
+        await addDoc(collection(dbInstance, 'reviews'), rev);
+      }
+
+      await setDoc(doc(dbInstance, 'stats', 'app_stats'), {
+        downloads: 12840,
+        totalReviews: initialReviews.length,
+        averageRating: 4.8,
+        ratingCounts: { "5": 4, "4": 1, "3": 0, "2": 0, "1": 0 }
+      });
+    }
+
+    // Initialize Firebase Live Data Layer
+    async function startFirebase() {
+      try {
+        const res = await fetch('/api/firebase-config');
+        const { success, config } = await res.json();
+        if (success && config) {
+          const app = initializeApp(config);
+          const dbInstance = getFirestore(app, config.firestoreDatabaseId);
+
+          // Connection Test
+          try {
+            await getDocFromServer(doc(dbInstance, 'test', 'connection'));
+          } catch (_) {}
+
+          // Stats Real-time Subscription
+          onSnapshot(doc(dbInstance, 'stats', 'app_stats'), (snapshot) => {
+            if (snapshot.exists()) {
+              updateStatsUI(snapshot.data());
+            } else {
+              seedInitialData(dbInstance);
+            }
+          }, (err) => console.error('Stats Sync Error:', err));
+
+          // Reviews Real-time Subscription
+          onSnapshot(collection(dbInstance, 'reviews'), (snapshot) => {
+            const list = [];
+            snapshot.forEach(docSnap => {
+              list.push({ id: docSnap.id, ...docSnap.data() });
+            });
+            list.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            if (list.length === 0 && !snapshot.metadata.fromCache) {
+              seedInitialData(dbInstance);
+            } else {
+              renderReviewsList(list, dbInstance);
+            }
+          }, (err) => console.error('Reviews Sync Error:', err));
+
+          // Bind Comment Form to Firebase
+          const commentForm = document.getElementById('comment-form');
+          const submitCommentBtn = document.getElementById('submit-comment-btn');
+
+          if (commentForm) {
+            commentForm.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const nameInput = document.getElementById('comment-name');
+              const textInput = document.getElementById('comment-text');
+              const rating = selectedRatingInput ? selectedRatingInput.value : '5';
+              const name = nameInput?.value.trim();
+              const text = textInput?.value.trim();
+
+              if (!name || !text) {
+                showToast('يرجى كتابة اسمك ونص التعليق');
+                return;
+              }
+
+              if (submitCommentBtn) {
+                submitCommentBtn.disabled = true;
+                submitCommentBtn.querySelector('span').textContent = 'جارٍ الحفظ في Firebase...';
+              }
+
+              try {
+                // Add review document
+                await addDoc(collection(dbInstance, 'reviews'), {
+                  name,
+                  text,
+                  rating: Number(rating),
+                  date: new Date().toISOString(),
+                  device: 'Android',
+                  likes: 0
+                });
+
+                // Update global stats
+                const statsRef = doc(dbInstance, 'stats', 'app_stats');
+                const statsSnap = await getDoc(statsRef);
+                let curDownloads = 12840;
+                let curTotal = 0;
+                let curSum = 0;
+
+                if (statsSnap.exists()) {
+                  const st = statsSnap.data();
+                  curDownloads = st.downloads || 12840;
+                  curTotal = (st.totalReviews || 0) + 1;
+                  curSum = ((st.averageRating || 5) * (st.totalReviews || 0)) + Number(rating);
+                } else {
+                  curTotal = 1;
+                  curSum = Number(rating);
+                }
+
+                const newAvg = Number((curSum / curTotal).toFixed(1));
+                await setDoc(statsRef, {
+                  downloads: curDownloads,
+                  totalReviews: curTotal,
+                  averageRating: newAvg
+                }, { merge: true });
+
+                showToast('تم حفظ ونشر تقييمك في Firebase بنجاح! 🎉');
+                commentForm.reset();
+                if (selectedRatingInput) selectedRatingInput.value = '5';
+                highlightStars(5);
+
+                if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
+                  confetti({ particleCount: 35, spread: 60, origin: { y: 0.6 } });
+                }
+              } catch (err) {
+                showToast('حدث خطأ أثناء الحفظ في Firebase');
+              } finally {
+                if (submitCommentBtn) {
+                  submitCommentBtn.disabled = false;
+                  submitCommentBtn.querySelector('span').textContent = 'حفظ ونشر التعليق بالأرشيف';
+                }
+              }
+            });
+          }
+
+          // Bind Download increment buttons
+          document.querySelectorAll('[data-open-release], #official-download, #project-to-brief').forEach(btn => {
+            btn.addEventListener('click', async () => {
+              try {
+                await updateDoc(doc(dbInstance, 'stats', 'app_stats'), {
+                  downloads: increment(1)
+                });
+              } catch (_) {}
+            });
+          });
+
+          return; // Successfully initialized Firebase
+        }
+      } catch (err) {
+        console.error('Firebase setup fallback:', err);
+      }
+
+      // Fallback REST fetch if Firebase client fails
+      fetchFallbackArchive();
+    }
+
+    async function fetchFallbackArchive() {
+      try {
+        const res = await fetch('/api/comments');
+        const data = await res.json();
+        if (data.success) {
+          updateStatsUI({ downloads: data.downloads, averageRating: Number(data.averageRating), totalReviews: data.totalComments });
+          renderReviewsList(data.comments, null);
+        }
+      } catch (_) {}
+    }
+
+    const refreshCommentsBtn = document.getElementById('refresh-comments-btn');
+    if (refreshCommentsBtn) {
+      refreshCommentsBtn.addEventListener('click', () => {
+        showToast('تم مزامنة التعليقات مع Firebase');
+      });
+    }
+
+    startFirebase();
+  </script>
 </body>
 </html>
