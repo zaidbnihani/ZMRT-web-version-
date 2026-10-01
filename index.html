@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23080e0c'/%3E%3Cpath d='M18 20h28L18 44h28' fill='none' stroke='%23ccf77a' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="https://zmrt.on.ma/public/apple-touch-icon.png">
 
   <!-- Schema.org Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -423,7 +423,7 @@
       .footer-links{display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap;gap:8px 20px;width:100%}.footer-links button{font-size:.875rem}
       .footer-bottom{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:20px;padding-top:20px;text-align:center;font-size:.8125rem}
       .footer-bottom .latin{font-size:.75rem;letter-spacing:.08em}
-      .mobile-dock{position:fixed;inset-inline:auto;left:50%;right:auto;top:auto;bottom:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:calc(100% - 24px);max-width:480px;margin:0;z-index:55;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;padding:7px;min-height:76px;direction:rtl;box-sizing:border-box;background:rgba(20,30,23,.93);backdrop-filter:blur(28px) saturate(145%);-webkit-backdrop-filter:blur(28px) saturate(145%);border:1px solid rgba(224,245,203,.18);border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)}
+      .mobile-dock{position:fixed;inset-inline:auto;left:50%;right:auto;top:auto;bottom:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:calc(100% - 24px);max-width:480px;margin:0;z-index:55;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;padding:7px;min-height:76px;direction:rtl;box-sizing:border-box;background:rgba(20,30,23,.93);backdrop-filter:blur(28px) saturate(145%);-webkit-backdrop-filter:blur(28px) saturate(145%);border:1px solid rgba(224,245,203,.18);border-radius:24px;box-shadow:0 12px 40px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)}
       .dock-link{width:100%;min-width:0;min-height:60px;padding:8px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;border-radius:17px;background:transparent;color:#a9b5a4;font-size:.875rem;font-weight:700;line-height:1.3;text-align:center;transition:background .3s,color .3s}
       .dock-link span{width:100%;max-width:100%;overflow-wrap:anywhere;text-align:center}
       .dock-link svg{width:22px;height:22px;flex-shrink:0;transition:translate .3s var(--ease)}
@@ -645,7 +645,7 @@
         <a class="nav-link" href="#services">المميزات</a>
         <a class="nav-link" href="#how">كيف تبدأ</a>
         <a class="nav-link" href="#stats">الإحصاءات</a>
-        <a class="nav-link" href="#reviews">التعليقات</a>
+
         <a class="nav-link" href="#about">رؤيتنا</a>
       </nav>
       <div class="header-actions">
@@ -694,10 +694,7 @@
           <svg aria-hidden="true"><use href="#i-chart"/></svg>
           <span>الأرقام والإحصاءات</span>
         </a>
-        <a class="drawer-link" href="#reviews">
-          <svg aria-hidden="true"><use href="#i-comment"/></svg>
-          <span>آراء وتعليقات المستخدمين</span>
-        </a>
+
         <a class="drawer-link" href="#about">
           <svg aria-hidden="true"><use href="#i-shield"/></svg>
           <span>رؤيتنا والخصوصية</span>
@@ -788,99 +785,15 @@
       <div class="container">
         <div class="section-heading reveal"><div><p class="eyebrow">نظرة سريعة</p><h2 id="stats-title">ZMRT بالأرقام.</h2></div><p class="section-intro">التطبيق، والتجربة، وأرقامها في مكان واحد.</p></div>
         <div class="stats-grid">
-          <article class="stat-card glass-card reveal"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-download"/></svg></span><strong class="stat-value" id="downloads-value" dir="ltr">12,840</strong><h3>تنزيلات التطبيق</h3><p id="downloads-caption">عملية تنزيل مسجلة</p></article>
-          <article class="stat-card glass-card reveal delay-1"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-star"/></svg></span><strong class="stat-value" id="rating-value" dir="ltr">4.9</strong><h3>تقييم المستخدمين</h3><p id="rating-caption">من 5 نجوم (أرشيف مباشر)</p></article>
+          <article class="stat-card glass-card reveal"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><strong class="stat-value" dir="ltr">100%</strong><h3>خصوصية تامة</h3><p>اتصالات آمنة ومشفرة بالكامل</p></article>
+          <article class="stat-card glass-card reveal delay-1"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-mic"/></svg></span><strong class="stat-value" dir="ltr">HD</strong><h3>صوت نقي</h3><p>اتصال فائق الوضوح بجودة Opus HD</p></article>
           <article class="stat-card glass-card reveal delay-2"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-video"/></svg></span><strong class="stat-value" data-count="2" dir="ltr">2</strong><h3>طريقتان للتواصل</h3><p>صوت، أو صوت وصورة</p></article>
           <article class="stat-card glass-card reveal delay-2"><span class="stat-icon"><svg aria-hidden="true"><use href="#i-mobile"/></svg></span><strong class="stat-value stat-platform" dir="ltr">Android</strong><h3>منصّة التطبيق</h3><p>التواصل من هاتفك</p></article>
         </div>
       </div>
     </section>
     <section class="content-section" id="how" aria-labelledby="how-title"><div class="container"><div class="section-heading reveal"><div><p class="eyebrow">من أول خطوة</p><h2 id="how-title">ابدأ خلال لحظات.</h2></div><p class="section-intro">من تحميل التطبيق إلى أول محادثة، هذه بداية رحلتك.</p></div><div class="service-grid"><article class="service glass-card reveal"><span class="index" dir="ltr">01 /</span><h3 style="margin-top:23px">حمّل التطبيق</h3><p>حمّل ZMRT من رابط التحميل الرسمي، ثم افتحه على هاتفك.</p></article><article class="service glass-card reveal delay-1"><span class="index" dir="ltr">02 /</span><h3 style="margin-top:23px">ابدأ تجربتك</h3><p>اتبع خطوات الإعداد داخل ZMRT، وراجع الأذونات التي تحتاجها تجربتك.</p></article><article class="service glass-card reveal delay-2"><span class="index" dir="ltr">03 /</span><h3 style="margin-top:23px">كن أقرب</h3><p>ابدأ محادثتك الصوتية أو المرئية داخل التطبيق.</p></article></div></div></section>
-    <section class="content-section reviews-section" id="reviews" aria-labelledby="reviews-title">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow"><svg aria-hidden="true" style="width:16px;height:16px"><use href="#i-comment"/></svg><span>أرشيف آراء المستخدمين</span></p>
-            <h2 id="reviews-title">تجارب حقيقية.<br><span>من مستخدمي ZMRT.</span></h2>
-          </div>
-          <p class="section-intro">شارك رأيك وتجربتك ليتم حفظها مباشرة في أرشيف الإنترنت الحي لتطبيق ZMRT.</p>
-        </div>
 
-        <div class="reviews-grid">
-          <!-- Summary & Submit Form -->
-          <div class="reviews-sidebar reveal">
-            <div class="glass-card rating-summary-card">
-              <div class="summary-score">
-                <span class="big-score" id="avg-rating-display">4.9</span>
-                <div class="stars-row" aria-label="تقييم 4.9 من 5">
-                  <svg aria-hidden="true"><use href="#i-star-filled"/></svg>
-                  <svg aria-hidden="true"><use href="#i-star-filled"/></svg>
-                  <svg aria-hidden="true"><use href="#i-star-filled"/></svg>
-                  <svg aria-hidden="true"><use href="#i-star-filled"/></svg>
-                  <svg aria-hidden="true"><use href="#i-star-filled"/></svg>
-                </div>
-                <p class="score-caption" id="total-reviews-caption">بناءً على <strong id="total-reviews-count">5</strong> تقييمات محفوظة بالأرشيف</p>
-              </div>
-              <div class="rating-breakdown">
-                <div class="bar-row"><span>5 نجوم</span><div class="bar-track"><div class="bar-fill" id="bar-5-fill" style="width:85%"></div></div><span id="bar-5-pct">85%</span></div>
-                <div class="bar-row"><span>4 نجوم</span><div class="bar-track"><div class="bar-fill" id="bar-4-fill" style="width:15%"></div></div><span id="bar-4-pct">15%</span></div>
-                <div class="bar-row"><span>3 نجوم</span><div class="bar-track"><div class="bar-fill" id="bar-3-fill" style="width:0%"></div></div><span id="bar-3-pct">0%</span></div>
-              </div>
-            </div>
-
-            <div class="glass-card comment-form-card">
-              <h3>أضف تعليقك وتجربتك</h3>
-              <p class="form-desc">سيتم حفظ تعليقك فورياً في أرشيف الإنترنت وعرضه لجميع الزوار.</p>
-              <form id="comment-form" class="comment-form">
-                <div class="form-field">
-                  <label for="comment-name">اسمك الكريم</label>
-                  <input type="text" id="comment-name" name="name" required placeholder="مثال: أحمد الحربي" maxlength="50" autocomplete="name">
-                </div>
-                <div class="form-field">
-                  <div class="star-picker-header">
-                    <label for="star-picker">تقييمك للتطبيق</label>
-                    <span id="star-picker-badge" class="star-picker-label">5.0 — ممتاز نوصي به شديداً</span>
-                  </div>
-                  <div class="star-rating-picker" id="star-picker" role="radiogroup" aria-label="اختر تقييمك من 1 إلى 5 نجوم">
-                    <button type="button" class="star-btn active" data-rating="1" aria-label="1 نجمة"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
-                    <button type="button" class="star-btn active" data-rating="2" aria-label="2 نجمتان"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
-                    <button type="button" class="star-btn active" data-rating="3" aria-label="3 نجوم"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
-                    <button type="button" class="star-btn active" data-rating="4" aria-label="4 نجوم"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
-                    <button type="button" class="star-btn active" data-rating="5" aria-label="5 نجوم"><svg aria-hidden="true"><use href="#i-star-filled"/></svg></button>
-                    <input type="hidden" id="selected-rating" name="rating" value="5">
-                  </div>
-                </div>
-                <div class="form-field">
-                  <label for="comment-text">رأيك وتجربتك مع ZMRT</label>
-                  <textarea id="comment-text" name="text" required rows="3" placeholder="اكتب ملاحظاتك عن جودة الصوت، سرعة الاتصال، أو تجربة الاستخدام..." maxlength="500"></textarea>
-                </div>
-                <button type="submit" class="button button-primary form-submit-btn" id="submit-comment-btn">
-                  <svg aria-hidden="true"><use href="#i-spark"/></svg>
-                  <span>حفظ ونشر التعليق بالأرشيف</span>
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <!-- Live Comments Stream -->
-          <div class="reviews-stream reveal delay-1">
-            <div class="stream-header">
-              <div class="stream-title">
-                <h3>أحدث تعليقات المستخدمين</h3>
-                <span class="live-tag"><span class="pulse"></span>أرشيف مباشر</span>
-              </div>
-              <button type="button" class="button button-outline button-small refresh-btn" id="refresh-comments-btn" aria-label="تحديث التعليقات">
-                <svg aria-hidden="true" style="width:16px;height:16px"><use href="#i-spark"/></svg>
-                <span>تحديث الأرشيف</span>
-              </button>
-            </div>
-            <div class="comments-list" id="comments-list" aria-live="polite">
-              <div class="comment-card"><p style="color:var(--muted);text-align:center;margin:0">جارٍ جلب التعليقات من الأرشيف...</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="content-section" id="about" aria-labelledby="about-title"><div class="container about-grid"><div class="about-copy reveal"><p class="eyebrow">اعرف قبل أن تبدأ</p><h2 id="about-title">خصوصيتك<br><span>تستحق الوضوح.</span></h2><p>اطّلع على سياسة الخصوصية وشروط الاستخدام، وتعرّف على الأذونات المرتبطة بالكاميرا والميكروفون قبل استخدام التطبيق.</p><div class="hero-actions" style="margin-top:25px"><a class="button button-outline" href="/privacy.html">سياسة الخصوصية</a><a class="button button-outline" href="/terms.html">شروط الاستخدام</a></div></div><div class="principle-list reveal delay-1"><article class="principle"><span class="principle-num" dir="ltr">01</span><div><h3>الميكروفون للمكالمات الصوتية</h3><p>يرتبط استخدام الميكروفون بالتواصل الصوتي داخل التطبيق.</p></div></article><article class="principle"><span class="principle-num" dir="ltr">02</span><div><h3>الكاميرا للمكالمات المرئية</h3><p>يرتبط استخدام الكاميرا بمشاركة الصورة في مكالمات الفيديو.</p></div></article><article class="principle"><span class="principle-num" dir="ltr">03</span><div><h3>أذوناتك في إعدادات جهازك</h3><p>يمكن إدارة أذونات ZMRT من إعدادات أندرويد، ثم التطبيقات، ثم الأذونات.</p></div></article></div></div></section>
     <section class="contact" id="start" aria-labelledby="contact-title"><div class="container"><div class="contact-panel reveal"><div><p class="eyebrow" style="margin-bottom:12px">ZMRT على أندرويد</p><h2 id="contact-title">محادثتك القادمة تبدأ هنا.</h2><p>صوت، وصورة، ولحظات تستحق المشاركة. اكتشف ZMRT على هاتفك.</p></div><button class="button button-primary" data-open-release>تنزيل<svg aria-hidden="true" style="width:19px;height:19px"><use href="#i-download"/></svg></button></div></div></section>
   </main>
@@ -888,8 +801,7 @@
   <nav class="mobile-dock" aria-label="التنقل للهاتف">
     <a class="dock-link active" href="#home" aria-current="location"><svg aria-hidden="true"><use href="#i-home"/></svg><span>الرئيسية</span></a>
     <a class="dock-link" href="#services"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>المميزات</span></a>
-    <a class="dock-link" href="#reviews"><svg aria-hidden="true"><use href="#i-comment"/></svg><span>التعليقات</span></a>
-    <a class="dock-link" href="#stats"><svg aria-hidden="true"><use href="#i-chart"/></svg><span>الأرقام</span></a>
+    <a class="dock-link" href="#stats"><svg aria-hidden="true"><use href="#i-chart"/></svg><span>المؤشرات</span></a>
     <button class="dock-link dock-action" data-open-release aria-label="تنزيل تطبيق ZMRT"><svg aria-hidden="true"><use href="#i-download"/></svg><span>تنزيل</span></button>
   </nav>
   <a class="back-top" href="#home" aria-label="العودة إلى أعلى الصفحة"><svg aria-hidden="true"><use href="#i-up"/></svg></a>
@@ -1416,16 +1328,26 @@
 
       function updateActiveNavOnScroll() {
         if (isClickScrolling) return;
-        const sectionIds = ['home', 'intro', 'services', 'how', 'stats', 'reviews', 'about'];
+        const sectionIds = ['home', 'intro', 'services', 'how', 'stats', 'about'];
         const headerOffset = header ? header.offsetHeight + 40 : 110;
         let current = 'home';
         
-        for (const id of sectionIds) {
-          const sec = document.getElementById(id);
-          if (sec) {
-            const rect = sec.getBoundingClientRect();
-            if (rect.top <= headerOffset && rect.bottom > headerOffset) {
-              current = id;
+        if (window.scrollY < 120) {
+          current = 'home';
+        } else {
+          let minDiff = Infinity;
+          for (const id of sectionIds) {
+            const sec = document.getElementById(id);
+            if (sec) {
+              const rect = sec.getBoundingClientRect();
+              if (rect.top <= headerOffset + 120 && rect.bottom > headerOffset) {
+                const diff = Math.abs(rect.top - headerOffset);
+                const weight = rect.top <= headerOffset ? diff : diff * 1.5;
+                if (weight < minDiff) {
+                  minDiff = weight;
+                  current = id;
+                }
+              }
             }
           }
         }
@@ -1672,407 +1594,5 @@
     })();
   </script>
 
-  <!-- Firebase Live Module Integration -->
-  <script type="module">
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-    import { 
-      getFirestore, 
-      doc, 
-      collection, 
-      onSnapshot, 
-      setDoc, 
-      addDoc, 
-      updateDoc, 
-      deleteDoc, 
-      getDoc, 
-      increment, 
-      getDocFromServer 
-    } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
-
-    const root = document.documentElement;
-    const toast = document.getElementById('toast');
-    const numberFormat = new Intl.NumberFormat('en-US');
-
-    let toastTimer = null;
-    function showToast(msg, duration = 3500) {
-      if (!toast) return;
-      toast.textContent = msg;
-      toast.classList.add('visible');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.remove('visible'), duration);
-    }
-
-    // Star Picker Rating Labels
-    const ratingLabels = {
-      1: '1.0 — ضعيف للغاية',
-      2: '2.0 — مقبول',
-      3: '3.0 — جيد جداً',
-      4: '4.0 — ممتاز جداً',
-      5: '5.0 — ممتاز نوصي به شديداً'
-    };
-
-    const starBtns = document.querySelectorAll('#star-picker .star-btn');
-    const selectedRatingInput = document.getElementById('selected-rating');
-    const starBadge = document.getElementById('star-picker-badge');
-
-    function highlightStars(count) {
-      starBtns.forEach(btn => {
-        const r = parseInt(btn.dataset.rating, 10);
-        btn.classList.toggle('active', r <= count);
-      });
-      if (starBadge && ratingLabels[count]) {
-        starBadge.textContent = ratingLabels[count];
-      }
-    }
-
-    if (starBtns.length) {
-      starBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const r = parseInt(btn.dataset.rating, 10);
-          if (selectedRatingInput) selectedRatingInput.value = r;
-          highlightStars(r);
-        });
-        btn.addEventListener('mouseenter', () => {
-          const r = parseInt(btn.dataset.rating, 10);
-          highlightStars(r);
-        });
-      });
-      document.getElementById('star-picker')?.addEventListener('mouseleave', () => {
-        const cur = parseInt(selectedRatingInput?.value || '5', 10);
-        highlightStars(cur);
-      });
-    }
-
-    function formatRelativeTime(dateStr) {
-      try {
-        const date = new Date(dateStr);
-        const now = new Date();
-        const diffSec = Math.floor((now - date) / 1000);
-        if (diffSec < 60) return 'الآن';
-        if (diffSec < 3600) return `منذ ${Math.floor(diffSec / 60)} دقيقة`;
-        if (diffSec < 86400) return `منذ ${Math.floor(diffSec / 3600)} ساعة`;
-        if (diffSec < 2592000) return `منذ ${Math.floor(diffSec / 86400)} يوم`;
-        return date.toLocaleDateString('ar-EG');
-      } catch (_) {
-        return 'مؤخراً';
-      }
-    }
-
-    function renderStars(rating) {
-      let out = '';
-      for (let i = 1; i <= 5; i++) {
-        out += `<svg aria-hidden="true" style="color:${i <= rating ? '#f5c518' : '#3d4d3a'}"><use href="#i-star-filled"/></svg>`;
-      }
-      return out;
-    }
-
-    function escapeHtml(str) {
-      if (!str) return '';
-      return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
-    }
-
-    // UI Render for Reviews and Global Stats
-    function updateStatsUI(stats) {
-      if (!stats) return;
-      const downloads = stats.downloads || 12840;
-      const avg = stats.averageRating ? stats.averageRating.toFixed(1) : '5.0';
-      const total = stats.totalReviews || 0;
-
-      const heroDownloadsNum = document.getElementById('hero-downloads-num');
-      const downloadsValue = document.getElementById('downloads-value');
-      const avgRatingDisplay = document.getElementById('avg-rating-display');
-      const ratingValue = document.getElementById('rating-value');
-      const totalReviewsCount = document.getElementById('total-reviews-count');
-
-      if (heroDownloadsNum) heroDownloadsNum.textContent = '+' + numberFormat.format(downloads);
-      if (downloadsValue) { downloadsValue.dataset.count = String(downloads); downloadsValue.textContent = numberFormat.format(downloads); }
-      if (avgRatingDisplay) avgRatingDisplay.textContent = avg;
-      if (ratingValue) { ratingValue.dataset.count = String(avg); ratingValue.textContent = avg; }
-      if (totalReviewsCount) totalReviewsCount.textContent = total;
-    }
-
-    function renderReviewsList(reviews, dbInstance) {
-      const commentsList = document.getElementById('comments-list');
-      if (!commentsList) return;
-
-      if (!reviews || reviews.length === 0) {
-        commentsList.innerHTML = '<div class="comment-card"><p style="color:var(--muted);text-align:center;margin:0">لا توجد تعليقات بعد. كن أول من يقيّم تطبيق ZMRT!</p></div>';
-        return;
-      }
-
-      // Breakdown calculation
-      const total = reviews.length;
-      const r5 = reviews.filter(c => Number(c.rating) === 5).length;
-      const r4 = reviews.filter(c => Number(c.rating) === 4).length;
-      const r3 = reviews.filter(c => Number(c.rating) <= 3).length;
-      const p5 = Math.round((r5 / total) * 100);
-      const p4 = Math.round((r4 / total) * 100);
-      const p3 = Math.round((r3 / total) * 100);
-      
-      const b5 = document.getElementById('bar-5-fill');
-      const t5 = document.getElementById('bar-5-pct');
-      if (b5 && t5) { b5.style.width = p5 + '%'; t5.textContent = p5 + '%'; }
-      const b4 = document.getElementById('bar-4-fill');
-      const t4 = document.getElementById('bar-4-pct');
-      if (b4 && t4) { b4.style.width = p4 + '%'; t4.textContent = p4 + '%'; }
-      const b3 = document.getElementById('bar-3-fill');
-      const t3 = document.getElementById('bar-3-pct');
-      if (b3 && t3) { b3.style.width = p3 + '%'; t3.textContent = p3 + '%'; }
-
-      commentsList.innerHTML = reviews.map(c => {
-        const initial = (c.name || 'م')[0].toUpperCase();
-        return `
-          <article class="comment-card reveal" data-comment-id="${c.id}">
-            <div class="comment-top">
-              <div class="comment-user">
-                <div class="user-avatar">${escapeHtml(initial)}</div>
-                <div class="user-meta">
-                  <strong>${escapeHtml(c.name)}</strong>
-                  <span class="user-badge"><svg aria-hidden="true" style="width:13px;height:13px"><use href="#i-check"/></svg>مستخدم موثق</span>
-                </div>
-              </div>
-              <div class="comment-meta-right">
-                <div class="comment-stars" aria-label="تقييم ${c.rating} من 5">${renderStars(c.rating)}</div>
-                <span class="comment-time">${formatRelativeTime(c.date)}</span>
-              </div>
-            </div>
-            <p class="comment-body">${escapeHtml(c.text)}</p>
-            <div class="comment-footer">
-              <span class="verified-pill"><svg aria-hidden="true" style="width:14px;height:14px"><use href="#i-mobile"/></svg>تطبيق أندرويد</span>
-              <div style="display:flex;gap:8px;align-items:center;">
-                <button type="button" class="like-btn" data-like-id="${c.id}" aria-label="إعجاب بالتعليق">
-                  <svg aria-hidden="true"><use href="#i-heart"/></svg>
-                  <span class="like-count">${c.likes || 0}</span>
-                </button>
-                <button type="button" class="delete-btn" data-delete-id="${c.id}" aria-label="حذف التعليق" style="background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.25);color:#ff7777;padding:5px 12px;border-radius:20px;font-size:0.75rem;cursor:pointer;display:inline-flex;align-items:center;gap:4px;transition:all 0.2s ease;">
-                  <svg aria-hidden="true" style="width:13px;height:13px;fill:currentColor;" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
-                  <span>حذف</span>
-                </button>
-              </div>
-            </div>
-          </article>
-        `;
-      }).join('');
-
-      // Wire Like Buttons to Firebase
-      commentsList.querySelectorAll('.like-btn').forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const id = btn.dataset.likeId;
-          if (btn.classList.contains('liked')) return;
-          btn.classList.add('liked');
-          try {
-            if (dbInstance) {
-              await updateDoc(doc(dbInstance, 'reviews', id), { likes: increment(1) });
-            } else {
-              await fetch(`/api/comments/${id}/like`, { method: 'POST' });
-            }
-            if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
-              confetti({ particleCount: 15, spread: 40, origin: { y: 0.8 } });
-            }
-          } catch (_) {}
-        });
-      });
-
-      // Wire Delete Buttons to Firebase
-      commentsList.querySelectorAll('.delete-btn').forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const id = btn.dataset.deleteId;
-          if (!confirm('هل أنت تأكد من رغبتك في حذف هذا التعليق؟')) return;
-          try {
-            if (dbInstance) {
-              await deleteDoc(doc(dbInstance, 'reviews', id));
-              showToast('تم حذف التعليق من Firebase بنجاح');
-            } else {
-              const res = await fetch(`/api/comments/${id}`, { method: 'DELETE' });
-              const data = await res.json();
-              if (data.success) showToast('تم حذف التعليق بنجاح');
-            }
-          } catch (_) {
-            showToast('حدث خطأ أثناء حذف التعليق');
-          }
-        });
-      });
-    }
-
-    // Seed Initial Data into Firebase if empty
-    async function seedInitialData(dbInstance) {
-      const initialReviews = [
-        { name: 'عمر النبهاني', rating: 5, text: 'تطبيق ممتاز جداً ونقاء الصوت في المكالمات بجودة Opus HD لا يضاهى! خفيف جداً على الجهاز ولا يستهلك البطارية.', date: new Date(Date.now() - 86400000).toISOString(), device: 'Android', likes: 24 },
-        { name: 'سارة القحطاني', rating: 5, text: 'المكالمات المرئية واضحة وبدون أي تقطيع حتى مع الإنترنت البطيء. التصميم الزمردي الأنيق والواجهة البسيطة رائعة للغاية.', date: new Date(Date.now() - 172800000).toISOString(), device: 'Android', likes: 19 },
-        { name: 'طارق الشامي', rating: 5, text: 'أفضل بديل للتواصل السريع والآمن. ميزة الاتصال بنقرة واحدة والخصوصية العالية تجعله تطبيقي الأساسي يومياً.', date: new Date(Date.now() - 259200000).toISOString(), device: 'Android', likes: 15 },
-        { name: 'فاطمة العمري', rating: 4, text: 'تجربة استخدام مريحة وسلسة وتصميم أنيق يفتح النفس. بانتظار التحديثات القادمة أيضاً.', date: new Date(Date.now() - 345600000).toISOString(), device: 'Android', likes: 11 },
-        { name: 'يوسف خليل', rating: 5, text: 'سرعة استجابة مذهلة وصوت نقي تماماً بدون أي تشويش. شكراً للقائمين على ZMRT على هذا العمل المتقن.', date: new Date(Date.now() - 432000000).toISOString(), device: 'Android', likes: 8 }
-      ];
-
-      for (const rev of initialReviews) {
-        await addDoc(collection(dbInstance, 'reviews'), rev);
-      }
-
-      await setDoc(doc(dbInstance, 'stats', 'app_stats'), {
-        downloads: 12840,
-        totalReviews: initialReviews.length,
-        averageRating: 4.8,
-        ratingCounts: { "5": 4, "4": 1, "3": 0, "2": 0, "1": 0 }
-      });
-    }
-
-    // Initialize Firebase Live Data Layer
-    async function startFirebase() {
-      try {
-        const res = await fetch('/api/firebase-config');
-        const { success, config } = await res.json();
-        if (success && config) {
-          const app = initializeApp(config);
-          const dbInstance = getFirestore(app, config.firestoreDatabaseId);
-
-          // Connection Test
-          try {
-            await getDocFromServer(doc(dbInstance, 'test', 'connection'));
-          } catch (_) {}
-
-          // Stats Real-time Subscription
-          onSnapshot(doc(dbInstance, 'stats', 'app_stats'), (snapshot) => {
-            if (snapshot.exists()) {
-              updateStatsUI(snapshot.data());
-            } else {
-              seedInitialData(dbInstance);
-            }
-          }, (err) => console.error('Stats Sync Error:', err));
-
-          // Reviews Real-time Subscription
-          onSnapshot(collection(dbInstance, 'reviews'), (snapshot) => {
-            const list = [];
-            snapshot.forEach(docSnap => {
-              list.push({ id: docSnap.id, ...docSnap.data() });
-            });
-            list.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-            if (list.length === 0 && !snapshot.metadata.fromCache) {
-              seedInitialData(dbInstance);
-            } else {
-              renderReviewsList(list, dbInstance);
-            }
-          }, (err) => console.error('Reviews Sync Error:', err));
-
-          // Bind Comment Form to Firebase
-          const commentForm = document.getElementById('comment-form');
-          const submitCommentBtn = document.getElementById('submit-comment-btn');
-
-          if (commentForm) {
-            commentForm.addEventListener('submit', async (e) => {
-              e.preventDefault();
-              const nameInput = document.getElementById('comment-name');
-              const textInput = document.getElementById('comment-text');
-              const rating = selectedRatingInput ? selectedRatingInput.value : '5';
-              const name = nameInput?.value.trim();
-              const text = textInput?.value.trim();
-
-              if (!name || !text) {
-                showToast('يرجى كتابة اسمك ونص التعليق');
-                return;
-              }
-
-              if (submitCommentBtn) {
-                submitCommentBtn.disabled = true;
-                submitCommentBtn.querySelector('span').textContent = 'جارٍ الحفظ في Firebase...';
-              }
-
-              try {
-                // Add review document
-                await addDoc(collection(dbInstance, 'reviews'), {
-                  name,
-                  text,
-                  rating: Number(rating),
-                  date: new Date().toISOString(),
-                  device: 'Android',
-                  likes: 0
-                });
-
-                // Update global stats
-                const statsRef = doc(dbInstance, 'stats', 'app_stats');
-                const statsSnap = await getDoc(statsRef);
-                let curDownloads = 12840;
-                let curTotal = 0;
-                let curSum = 0;
-
-                if (statsSnap.exists()) {
-                  const st = statsSnap.data();
-                  curDownloads = st.downloads || 12840;
-                  curTotal = (st.totalReviews || 0) + 1;
-                  curSum = ((st.averageRating || 5) * (st.totalReviews || 0)) + Number(rating);
-                } else {
-                  curTotal = 1;
-                  curSum = Number(rating);
-                }
-
-                const newAvg = Number((curSum / curTotal).toFixed(1));
-                await setDoc(statsRef, {
-                  downloads: curDownloads,
-                  totalReviews: curTotal,
-                  averageRating: newAvg
-                }, { merge: true });
-
-                showToast('تم حفظ ونشر تقييمك في Firebase بنجاح! 🎉');
-                commentForm.reset();
-                if (selectedRatingInput) selectedRatingInput.value = '5';
-                highlightStars(5);
-
-                if (typeof confetti === 'function' && !root.classList.contains('no-motion')) {
-                  confetti({ particleCount: 35, spread: 60, origin: { y: 0.6 } });
-                }
-              } catch (err) {
-                showToast('حدث خطأ أثناء الحفظ في Firebase');
-              } finally {
-                if (submitCommentBtn) {
-                  submitCommentBtn.disabled = false;
-                  submitCommentBtn.querySelector('span').textContent = 'حفظ ونشر التعليق بالأرشيف';
-                }
-              }
-            });
-          }
-
-          // Bind Download increment buttons
-          document.querySelectorAll('[data-open-release], #official-download, #project-to-brief').forEach(btn => {
-            btn.addEventListener('click', async () => {
-              try {
-                await updateDoc(doc(dbInstance, 'stats', 'app_stats'), {
-                  downloads: increment(1)
-                });
-              } catch (_) {}
-            });
-          });
-
-          return; // Successfully initialized Firebase
-        }
-      } catch (err) {
-        console.error('Firebase setup fallback:', err);
-      }
-
-      // Fallback REST fetch if Firebase client fails
-      fetchFallbackArchive();
-    }
-
-    async function fetchFallbackArchive() {
-      try {
-        const res = await fetch('/api/comments');
-        const data = await res.json();
-        if (data.success) {
-          updateStatsUI({ downloads: data.downloads, averageRating: Number(data.averageRating), totalReviews: data.totalComments });
-          renderReviewsList(data.comments, null);
-        }
-      } catch (_) {}
-    }
-
-    const refreshCommentsBtn = document.getElementById('refresh-comments-btn');
-    if (refreshCommentsBtn) {
-      refreshCommentsBtn.addEventListener('click', () => {
-        showToast('تم مزامنة التعليقات مع Firebase');
-      });
-    }
-
-    startFirebase();
-  </script>
 </body>
 </html>

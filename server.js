@@ -189,14 +189,35 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Explicit route for Privacy Policy
-app.get(['/privacy.html', '/privacy-policy.html', '/privacy', '/سياسة-الخصوصية', '/سياسة%20الخصوصية.html', '/سياسة الخصوصية.html'], (req, res) => {
+// Explicit routes for privacy and terms
+app.get(['/privacy', '/privacy.html', '/privacy-policy.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'privacy.html'));
 });
 
-// Explicit route for Terms & Conditions
-app.get(['/terms.html', '/terms-of-service.html', '/terms', '/الشروط-والأحكام', '/الشروط والأحكام.html', '/الشروط%20والأحكام.html'], (req, res) => {
+app.get(['/terms', '/terms.html', '/terms-of-service.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'terms.html'));
+});
+
+// 301 Redirects for Arabic paths & legacy files to privacy.html
+app.get([
+  '/سياسة-الخصوصية',
+  '/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9',
+  '/سياسة الخصوصية.html',
+  '/سياسة%20الخصوصية.html',
+  '/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9.html'
+], (req, res) => {
+  res.redirect(301, '/privacy.html');
+});
+
+// 301 Redirects for Arabic paths & legacy files to terms.html
+app.get([
+  '/الشروط-والأحكام',
+  '/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7-%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85',
+  '/الشروط والأحكام.html',
+  '/الشروط%20والأحكام.html',
+  '/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7%20%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85.html'
+], (req, res) => {
+  res.redirect(301, '/terms.html');
 });
 
 // Explicit route for ZMRT.html (redirect to root)
