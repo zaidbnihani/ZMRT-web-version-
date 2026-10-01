@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zmrt.on.ma/sitemap.xml

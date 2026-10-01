@@ -189,9 +189,14 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Explicit route for Privacy Policy & Terms full page
-app.get(['/سياسة%20الخصوصية.html', '/سياسة الخصوصية.html', '/privacy.html', '/terms.html', '/privacy-policy.html'], (req, res) => {
-  res.sendFile(path.join(__dirname, 'سياسة الخصوصية.html'));
+// Explicit route for Privacy Policy
+app.get(['/privacy.html', '/privacy-policy.html', '/privacy', '/سياسة-الخصوصية', '/سياسة%20الخصوصية.html', '/سياسة الخصوصية.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'privacy.html'));
+});
+
+// Explicit route for Terms & Conditions
+app.get(['/terms.html', '/terms-of-service.html', '/terms', '/الشروط-والأحكام', '/الشروط والأحكام.html', '/الشروط%20والأحكام.html'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'terms.html'));
 });
 
 // Explicit route for ZMRT.html (redirect to root)
