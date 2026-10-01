@@ -1,0 +1,16 @@
+{
+  "name": "zmrt-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Build complete')\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "express": "^4.21.2",
+    "gsap": "^3.15.0"
+  }
+}

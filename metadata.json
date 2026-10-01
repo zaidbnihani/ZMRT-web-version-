@@ -1,0 +1,9 @@
+{
+  "name": "ZMRT",
+  "description": "ZMRT — تطبيق التواصل والمكالمات الصوتية والمرئية. تواصل، تحدّث، وكن أقرب.",
+  "prompt": "ZMRT — Web version of communication and voice/video calling application",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
