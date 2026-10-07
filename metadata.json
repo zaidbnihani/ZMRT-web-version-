@@ -1,7 +1,7 @@
 {
-  "name": "ZMRT — Privacy Policy & Terms of Service",
-  "description": "Official Privacy Policy and Terms of Service for ZMRT application. Read our legal agreement, data handling practices, and terms of use.",
-  "prompt": "ZMRT — Privacy Policy and Terms of Service in English at root route",
+  "name": "ZMRT — تطبيق تواصل ومكالمات مرئية أردني",
+  "description": "ZMRT (زمرت) هو تطبيق أردني للمحادثات والمكالمات الصوتية والمرئية عالية الوضوح على أندرويد. تواصل بأمان وسهولة مع أصدقائك وعائلتك مع خصوصية تامة.",
+  "prompt": "ZMRT — تطبيق تواصل ومكالمات مرئية أردني",
   "permissions": [],
   "capabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
