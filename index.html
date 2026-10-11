@@ -8,9 +8,8 @@
   <title>ZMRT — تطبيق تواصل ومكالمات مرئية أردني</title>
   <link rel="canonical" href="https://zmrt.on.ma/" />
   
-  <!-- GSC Verification & Bing Webmaster Verification -->
+  <!-- GSC Verification -->
   <meta name="google-site-verification" content="google89a75d76ad73ef0c" />
-  <meta name="msvalidate.01" content="BING_VERIFICATION_TOKEN_PLACEHOLDER" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -48,7 +47,10 @@
       "alternateName": ["زمرت", "Zmrt", "zmrt", "تطبيق ZMRT", "تطبيق زمرت"],
       "url": "https://zmrt.on.ma/",
       "inLanguage": ["ar", "en"],
-      "description": "الموقع الرسمي لتطبيق ZMRT — تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد."
+      "description": "الموقع الرسمي لتطبيق ZMRT — تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد.",
+      "sameAs": [
+        "https://www.facebook.com/share/14qzRQ35cqh/"
+      ]
     },
     {
       "@context": "https://schema.org",
@@ -75,7 +77,10 @@
       "author": {
         "@type": "Organization",
         "name": "ZMRT",
-        "url": "https://zmrt.on.ma/"
+        "url": "https://zmrt.on.ma/",
+        "sameAs": [
+          "https://www.facebook.com/share/14qzRQ35cqh/"
+        ]
       }
     },
     {
@@ -84,7 +89,10 @@
       "name": "ZMRT",
       "alternateName": ["زمرت", "Zmrt"],
       "url": "https://zmrt.on.ma/",
-      "logo": "https://zmrt.on.ma/public/apple-touch-icon.png"
+      "logo": "https://zmrt.on.ma/public/apple-touch-icon.png",
+      "sameAs": [
+        "https://www.facebook.com/share/14qzRQ35cqh/"
+      ]
     }
   ]
   </script>
@@ -1388,10 +1396,10 @@
       function updateActiveNavOnScroll() {
         if (isClickScrolling) return;
         const sectionIds = ['home', 'intro', 'services', 'how', 'stats', 'about'];
-        const headerOffset = header ? header.offsetHeight + 40 : 110;
+        const headerOffset = header ? header.offsetHeight + 40 : 100;
         let current = 'home';
         
-        if (window.scrollY < 120) {
+        if (window.scrollY < 80) {
           current = 'home';
         } else {
           let minDiff = Infinity;
@@ -1399,11 +1407,10 @@
             const sec = document.getElementById(id);
             if (sec) {
               const rect = sec.getBoundingClientRect();
-              if (rect.top <= headerOffset + 120 && rect.bottom > headerOffset) {
+              if (rect.top <= headerOffset + 100 && rect.bottom > headerOffset) {
                 const diff = Math.abs(rect.top - headerOffset);
-                const weight = rect.top <= headerOffset ? diff : diff * 1.5;
-                if (weight < minDiff) {
-                  minDiff = weight;
+                if (diff < minDiff) {
+                  minDiff = diff;
                   current = id;
                 }
               }
@@ -1412,7 +1419,7 @@
         }
         
         // Handle bottom of page
-        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 60)) {
+        if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50)) {
           current = sectionIds[sectionIds.length - 1];
         }
         
@@ -1441,7 +1448,7 @@
               if (history.pushState) history.pushState(null, null, href);
               scrollTimeout = setTimeout(() => {
                 isClickScrolling = false;
-              }, 850);
+              }, 1000);
             }
           }
         });
