@@ -4,23 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#080e0c">
-  <meta name="description" content="سياسة الخصوصية الرسمية لتطبيق ZMRT الأردني. توضيح كامل لآليات حماية البيانات والخصوصية والأذونات في المكالمات الصوتية والمرئية على أندرويد.">
-  <title>ZMRT — سياسة الخصوصية | تطبيق تواصل أردني</title>
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="description" content="سياسة الخصوصية الرسمية لتطبيق زمرت ZMRT — تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد. تعرّف على آليات حماية البيانات وأذونات الميكروفون والكاميرا.">
+  <title>سياسة الخصوصية — ZMRT (زمرت) | تطبيق تواصل أردني</title>
   <link rel="canonical" href="https://zmrt.on.ma/privacy.html" />
+  <link rel="alternate" hreflang="ar-JO" href="https://zmrt.on.ma/privacy.html" />
+  <link rel="alternate" hreflang="ar" href="https://zmrt.on.ma/privacy.html" />
+  <link rel="alternate" hreflang="x-default" href="https://zmrt.on.ma/privacy.html" />
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ZMRT — سياسة الخصوصية | تطبيق تواصل أردني">
-  <meta property="og:description" content="سياسة الخصوصية الرسمية لتطبيق ZMRT الأردني. توضيح كامل لآليات حماية البيانات والخصوصية والأذونات في المكالمات الصوتية والمرئية على أندرويد.">
+  <meta property="og:title" content="سياسة الخصوصية — ZMRT (زمرت) | تطبيق تواصل أردني">
+  <meta property="og:description" content="سياسة الخصوصية الرسمية لتطبيق زمرت ZMRT — تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد. تعرّف على آليات حماية البيانات وأذونات الميكروفون والكاميرا.">
   <meta property="og:url" content="https://zmrt.on.ma/privacy.html">
   <meta property="og:site_name" content="ZMRT">
   <meta property="og:locale" content="ar_JO">
   <meta property="og:image" content="https://zmrt.on.ma/public/og-image.png">
+  <meta property="og:image:alt" content="سياسة الخصوصية لتطبيق ZMRT (زمرت) الأردني">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ZMRT — سياسة الخصوصية | تطبيق تواصل أردني">
-  <meta name="twitter:description" content="سياسة الخصوصية الرسمية لتطبيق ZMRT الأردني. توضيح كامل لآليات حماية البيانات والخصوصية والأذونات في المكالمات الصوتية والمرئية على أندرويد.">
+  <meta name="twitter:title" content="سياسة الخصوصية — ZMRT (زمرت) | تطبيق تواصل أردني">
+  <meta name="twitter:description" content="سياسة الخصوصية الرسمية لتطبيق زمرت ZMRT — تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد. تعرّف على آليات حماية البيانات وأذونات الميكروفون والكاميرا.">
   <meta name="twitter:image" content="https://zmrt.on.ma/public/og-image.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,22 +92,80 @@
     .footer-links { display: flex; justify-content: center; gap: 16px; margin-top: 10px; }
   </style>
 
-  <!-- Structured Data for MobileApplication/SoftwareApplication -->
+  <!-- Structured Data for Privacy Policy & ZMRT Entity Graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "ZMRT",
-    "alternateName": ["زمرت", "Zmrt"],
-    "url": "https://zmrt.on.ma/",
-    "operatingSystem": "Android",
-    "applicationCategory": "CommunicationApplication",
-    "description": "تطبيق التواصل الذكي والمكالمات الصوتية والمرئية الآمنة وعالية الجودة.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://zmrt.on.ma/#organization",
+        "name": "ZMRT",
+        "alternateName": ["زمرت", "Zmrt", "zmrt", "تطبيق ZMRT", "تطبيق زمرت"],
+        "url": "https://zmrt.on.ma/",
+        "logo": "https://zmrt.on.ma/public/apple-touch-icon.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "JO"
+        },
+        "sameAs": [
+          "https://www.facebook.com/share/14qzRQ35cqh/"
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://zmrt.on.ma/#app",
+        "name": "ZMRT",
+        "alternateName": ["زمرت", "Zmrt", "تطبيق تواصل أردني"],
+        "url": "https://zmrt.on.ma/",
+        "operatingSystem": "Android",
+        "applicationCategory": "CommunicationApplication",
+        "countryOfOrigin": {
+          "@type": "Country",
+          "name": "Jordan"
+        },
+        "description": "ZMRT (زمرت) هو تطبيق تواصل ومكالمات صوتية ومرئية أردني للأندرويد.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "JOD"
+        },
+        "publisher": {
+          "@id": "https://zmrt.on.ma/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://zmrt.on.ma/privacy.html#webpage",
+        "url": "https://zmrt.on.ma/privacy.html",
+        "name": "سياسة الخصوصية — ZMRT (زمرت) | تطبيق تواصل أردني",
+        "description": "سياسة الخصوصية الرسمية لتطبيق زمرت ZMRT الأردني للمكالمات الصوتية والمرئية على أندرويد.",
+        "inLanguage": "ar-JO",
+        "about": {
+          "@id": "https://zmrt.on.ma/#app"
+        },
+        "publisher": {
+          "@id": "https://zmrt.on.ma/#organization"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "ZMRT — الرئيسية",
+              "item": "https://zmrt.on.ma/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "سياسة الخصوصية",
+              "item": "https://zmrt.on.ma/privacy.html"
+            }
+          ]
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -122,8 +185,8 @@
 
     <!-- Document Header -->
     <header class="meta-header">
-      <h1>سياسة الخصوصية لتطبيق ZMRT</h1>
-      <p>تطبيق التواصل الذكي والمكالمات عالية الجودة</p>
+      <h1>سياسة الخصوصية لتطبيق ZMRT (زمرت)</h1>
+      <p>تطبيق تواصل ومكالمات صوتية ومرئية أردني</p>
     </header>
 
     <!-- Content Flow -->

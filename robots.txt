@@ -1,4 +1,46 @@
+# User-agent rules for Search Engines & AI Answer Engines (SEO + GEO)
 User-agent: *
+Allow: /
+
+# Explicit Allow for Google, Bing & Major Search Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Explicit Allow for Generative AI & LLM Crawlers (ChatGPT, OpenAI, Claude, Perplexity, Apple, Meta)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: meta-externalagent
 Allow: /
 
 Sitemap: https://zmrt.on.ma/sitemap.xml

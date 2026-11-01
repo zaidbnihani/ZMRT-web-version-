@@ -189,6 +189,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Explicit routes for AI / LLM crawlers (GEO standard)
+app.get(['/llms.txt', '/llms-full.txt', '/.well-known/llms.txt'], (req, res) => {
+  res.type('text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'llms.txt'));
+});
+
 // Explicit routes for privacy and terms
 app.get(['/privacy', '/privacy.html', '/privacy-policy.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'privacy.html'));
