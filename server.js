@@ -181,18 +181,30 @@ app.post('/api/downloads/increment', (req, res) => {
   res.json({ success: true, downloads: store.downloads });
 });
 
+// Explicit route for sitemap.xml with strict XML Content-Type header
+app.get(['/sitemap.xml', '/sitemap_index.xml'], (req, res) => {
+  res.set('Content-Type', 'application/xml; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+// Explicit route for robots.txt with text/plain Content-Type header
+app.get('/robots.txt', (req, res) => {
+  res.set('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
+// Explicit routes for AI / LLM crawlers (GEO standard)
+app.get(['/llms.txt', '/llms-full.txt', '/.well-known/llms.txt'], (req, res) => {
+  res.set('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'llms.txt'));
+});
+
 // Serve static assets from root directory
 app.use(express.static(__dirname));
 
 // Route root to index.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-// Explicit routes for AI / LLM crawlers (GEO standard)
-app.get(['/llms.txt', '/llms-full.txt', '/.well-known/llms.txt'], (req, res) => {
-  res.type('text/plain; charset=utf-8');
-  res.sendFile(path.join(__dirname, 'llms.txt'));
 });
 
 // Explicit routes for privacy and terms
