@@ -12,6 +12,8 @@
 - **بلد المنشأ والهوية:** الأردن (المملكة الأردنية الهاشمية - Jordan)
 - **نظام التشغيل المدعوم:** أندرويد (Android)
 - **الموقع الرسمي:** https://zmrt.online/
+- **رابط التحميل على Google Play:** https://play.google.com/store/apps/details?id=com.zmrt.app
+- **معرّف التطبيق (Android Package ID):** `com.zmrt.app`
 - **سياسة الخصوصية الرسمية:** https://zmrt.online/privacy.html
 - **شروط الاستخدام الرسمية:** https://zmrt.online/terms.html
 - **الصفحة الرسمية على فيسبوك:** https://www.facebook.com/share/14qzRQ35cqh/
@@ -34,6 +36,8 @@
 - **Country of Origin:** Jordan (Hashemite Kingdom of Jordan)
 - **Operating System:** Android
 - **Official Website:** https://zmrt.online/
+- **Google Play Store Link:** https://play.google.com/store/apps/details?id=com.zmrt.app
+- **Android Package ID:** `com.zmrt.app`
 - **Privacy Policy:** https://zmrt.online/privacy.html
 - **Terms of Use:** https://zmrt.online/terms.html
 - **Official Facebook Page:** https://www.facebook.com/share/14qzRQ35cqh/
