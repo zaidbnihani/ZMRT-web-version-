@@ -199,8 +199,9 @@ app.get(['/llms.txt', '/llms-full.txt', '/.well-known/llms.txt'], (req, res) => 
   res.sendFile(path.join(__dirname, 'llms.txt'));
 });
 
-// Serve static assets from root directory
+// Serve static assets from root and public directory
 app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Route root to index.html
 app.get('/', (req, res) => {
@@ -208,34 +209,62 @@ app.get('/', (req, res) => {
 });
 
 // Explicit routes for privacy and terms
-app.get(['/privacy', '/privacy.html', '/privacy-policy.html'], (req, res) => {
+app.get(['/privacy', '/privacy.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'privacy.html'));
 });
 
-app.get(['/terms', '/terms.html', '/terms-of-service.html'], (req, res) => {
+app.get(['/terms', '/terms.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'terms.html'));
 });
 
-// 301 Redirects for Arabic paths & legacy files to privacy.html
-app.get([
-  '/سياسة-الخصوصية',
-  '/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9',
-  '/سياسة الخصوصية.html',
-  '/سياسة%20الخصوصية.html',
-  '/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9.html'
-], (req, res) => {
-  res.redirect(301, '/privacy.html');
-});
-
-// 301 Redirects for Arabic paths & legacy files to terms.html
-app.get([
-  '/الشروط-والأحكام',
-  '/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7-%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85',
-  '/الشروط والأحكام.html',
-  '/الشروط%20والأحكام.html',
-  '/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7%20%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85.html'
-], (req, res) => {
-  res.redirect(301, '/terms.html');
+// 301 Redirects for Arabic & legacy aliases to /privacy.html and /terms.html
+app.use((req, res, next) => {
+  if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+  let decoded = '';
+  try {
+    decoded = decodeURIComponent(req.path).replace(/\/+$/, '');
+  } catch {
+    return next();
+  }
+  const normalized = decoded.toLowerCase();
+  const privacyAliases = new Set([
+    '/سياسة-الخصوصية',
+    '/سياسات-الخصوصية',
+    '/صفحة-سياسة-الخصوصية',
+    '/صفحة-سياسات-الخصوصية',
+    '/سياسة الخصوصية',
+    '/سياسة الخصوصية.html',
+    '/سياسة-الخصوصية.html',
+    '/سياسات-الخصوصية.html',
+    '/صفحة-سياسات-الخصوصية.html',
+    '/صفحة-سياسة-الخصوصية.html',
+    '/privacy-policy',
+    '/privacy-policy.html'
+  ]);
+  const termsAliases = new Set([
+    '/الشروط-والأحكام',
+    '/شروط-الاستخدام',
+    '/شروط-الاستخدام-والأحكام',
+    '/صفحة-شروط-الاستخدام',
+    '/صفحة-الشروط-والأحكام',
+    '/الشروط والأحكام',
+    '/الشروط والأحكام.html',
+    '/شروط الاستخدام',
+    '/شروط الاستخدام.html',
+    '/شروط-الاستخدام.html',
+    '/الشروط-والأحكام.html',
+    '/terms-of-service',
+    '/terms-of-service.html',
+    '/terms-of-use',
+    '/terms-of-use.html'
+  ]);
+  if (privacyAliases.has(normalized)) {
+    return res.redirect(301, '/privacy.html');
+  }
+  if (termsAliases.has(normalized)) {
+    return res.redirect(301, '/terms.html');
+  }
+  next();
 });
 
 // Explicit route for ZMRT.html (redirect to root)
