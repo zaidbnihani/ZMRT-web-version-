@@ -43,4 +43,4 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-Sitemap: https://zmrt.on.ma/sitemap.xml
+Sitemap: https://zmrt.online/sitemap.xml
