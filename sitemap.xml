@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://zmrt.online/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://zmrt.online/og-image.png</image:loc>
+      <image:title>ZMRT (زمرت) — تطبيق تواصل ومكالمات صوتية ومرئية أردني</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zmrt.online/apple-touch-icon.png</image:loc>
+      <image:title>شعار تطبيق ZMRT زمرت الأردني</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zmrt.online/privacy.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://zmrt.online/terms.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

@@ -194,14 +194,20 @@ app.get('/robots.txt', (req, res) => {
 });
 
 // Explicit routes for AI / LLM crawlers (GEO standard)
-app.get(['/llms.txt', '/llms-full.txt', '/.well-known/llms.txt'], (req, res) => {
+app.get(['/llms.txt', '/.well-known/llms.txt'], (req, res) => {
   res.set('Content-Type', 'text/plain; charset=utf-8');
   res.sendFile(path.join(__dirname, 'llms.txt'));
+});
+
+app.get('/llms-full.txt', (req, res) => {
+  res.set('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'public', 'llms-full.txt'));
 });
 
 // Serve static assets from root and public directory
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // Route root to index.html
 app.get('/', (req, res) => {
