@@ -206,11 +206,12 @@
         "inLanguage": "ar-JO",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": ["#hero-title", "#intro", "#services", "#about"]
+          "cssSelector": ["#hero-title", "#intro", "#services", "#about", "#developers"]
         },
         "significantLink": [
           "https://zmrt.online/privacy.html",
-          "https://zmrt.online/terms.html"
+          "https://zmrt.online/terms.html",
+          "https://developer.zmrt.online/"
         ]
       },
       {
@@ -289,8 +290,8 @@
     .brand-name{font:750 1.8rem/1 Arial,sans-serif;letter-spacing:-.08em;direction:ltr}
     .brand-mark{height:35px;width:35px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;background:rgba(204,247,122,.06);color:var(--accent)}
     .brand-mark svg{height:20px;width:20px;stroke-width:2}
-    .navigation{display:flex;gap:30px;align-items:center}
-    .nav-link{font-size:.875rem;color:var(--muted);position:relative;padding-block:12px;transition:color .2s}
+    .navigation{display:flex;gap:24px;align-items:center}
+    .nav-link{font-size:.875rem;color:var(--muted);position:relative;padding-block:12px;white-space:nowrap;transition:color .2s}
     .nav-link::after{content:"";position:absolute;inset:auto 0 2px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s var(--ease)}
     .nav-link:hover,.nav-link.active{color:var(--text)}
     .nav-link.active::after{transform:scaleX(1)}
@@ -796,7 +797,31 @@
     .like-btn.liked svg{fill:#ff6b81}
     .verified-pill{font-size:.75rem;color:#95b38f;display:inline-flex;align-items:center;gap:4px}
 
+    /* Developers & Businesses Section */
+    .developers-section{border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(14,24,18,.42),transparent)}
+    .dev-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+    .dev-copy h2{font-size:clamp(2.1rem,3.6vw,3rem);line-height:1.45;font-weight:800;margin:0 0 18px}
+    .dev-copy h2 span{color:var(--accent)}
+    .dev-copy>p:not(.eyebrow){color:var(--muted);font-size:1.0625rem;line-height:2;margin:0 0 24px;max-width:520px}
+    .dev-points{display:grid;gap:12px;margin-bottom:28px}
+    .dev-point{display:flex;align-items:flex-start;gap:12px;color:#d6e2d0;font-size:.95rem;line-height:1.8}
+    .dev-point svg{width:20px;height:20px;color:var(--accent);flex-shrink:0;margin-top:4px}
+    .dev-portal-card{display:flex;flex-direction:column;justify-content:space-between;gap:26px;padding:34px 30px;text-align:start;cursor:pointer;border:1px solid rgba(204,247,122,.22)}
+    .dev-portal-card:hover{border-color:rgba(204,247,122,.5)}
+    .dev-portal-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .dev-portal-domain{font:700 .875rem/1 Arial,sans-serif;color:var(--accent);letter-spacing:.03em;direction:ltr}
+    .dev-portal-card h3{font-size:1.45rem;font-weight:800;margin:0 0 10px;line-height:1.5}
+    .dev-portal-card p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.95}
+    .dev-portal-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:20px;border-top:1px solid var(--line);color:var(--accent);font-weight:700;font-size:.95rem}
+    .dev-portal-arrow{width:40px;height:40px;border-radius:12px;border:1px solid rgba(204,247,122,.3);background:rgba(204,247,122,.08);display:grid;place-items:center;flex-shrink:0;transition:transform .25s var(--ease),background .25s}
+    .dev-portal-card:hover .dev-portal-arrow{background:var(--accent);color:#14200e;transform:translate(-3px,-3px)}
+    @media(max-width:1200px){.nav-link{padding:8px 12px;font-size:.875rem}}
     @media(max-width:850px){
+      .dev-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+      .dev-copy{text-align:center}.dev-copy .eyebrow{justify-content:center}.dev-copy>p:not(.eyebrow){margin-inline:auto}
+      .dev-point{text-align:start;justify-content:flex-start}
+      .dev-copy .hero-actions{justify-content:center}
+      .dev-portal-card{padding:26px 22px}
       .reviews-grid{grid-template-columns:minmax(0,1fr);gap:20px}
       .summary-score .big-score{font-size:3rem}
       .comment-card{padding:18px 16px}
@@ -834,6 +859,8 @@
     <symbol id="i-up" viewBox="0 0 24 24"><path d="m6 14 6-6 6 6"/></symbol>
     <symbol id="i-comment" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
     <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4m8-8 4 4-4 4m-5 3 2-14"/></symbol>
+    <symbol id="i-arrow-up-left" viewBox="0 0 24 24"><path d="M17 17 7 7m0 9V7h9"/></symbol>
   </svg>
   <header class="header" id="header">
     <div class="container header-inner">
@@ -846,6 +873,7 @@
         <a class="nav-link" href="#stats">الإحصاءات</a>
 
         <a class="nav-link" href="#about">رؤيتنا</a>
+        <a class="nav-link" href="https://developer.zmrt.online/" rel="noopener noreferrer">المطورين والشركات</a>
       </nav>
       <div class="header-actions">
         <button class="button button-primary button-small header-download" data-open-release aria-label="تنزيل تطبيق ZMRT">
@@ -897,6 +925,10 @@
         <a class="drawer-link" href="#about">
           <svg aria-hidden="true"><use href="#i-shield"/></svg>
           <span>رؤيتنا والخصوصية</span>
+        </a>
+        <a class="drawer-link" href="https://developer.zmrt.online/" rel="noopener noreferrer">
+          <svg aria-hidden="true"><use href="#i-code"/></svg>
+          <span>المطورين والشركات</span>
         </a>
         <a class="drawer-link" href="/privacy.html">
           <svg aria-hidden="true"><use href="#i-shield"/></svg>
@@ -1023,9 +1055,42 @@
         </div>
       </div>
     </section>
+    <section class="content-section developers-section" id="developers" aria-labelledby="developers-title">
+      <div class="container dev-grid">
+        <div class="dev-copy reveal">
+          <p class="eyebrow">منظومة ZMRT للأعمال والتطوير</p>
+          <h2 id="developers-title">المطورين <span>والشركات</span></h2>
+          <p>بوابة متخصصة تتيح للمطورين والشركات الربط مع خدمات ومنظومة ZMRT، واستعراض موارد التكامل البرمجي والحلول التقنية المخصصة للأعمال عبر بوابتنا الرسمية.</p>
+          <div class="dev-points">
+            <div class="dev-point"><svg aria-hidden="true"><use href="#i-check"/></svg><span>وصول مباشر إلى بوابة المطورين ووثائق الربط البرمجي</span></div>
+            <div class="dev-point"><svg aria-hidden="true"><use href="#i-check"/></svg><span>حلول تواصل مخصصة للشركات والمؤسسات والفرق التقنية</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://developer.zmrt.online/" rel="noopener noreferrer">
+              <span>المطورين والشركات</span>
+              <svg aria-hidden="true"><use href="#i-arrow-up-left"/></svg>
+            </a>
+          </div>
+        </div>
+        <a class="dev-portal-card glass-card reveal delay-1" href="https://developer.zmrt.online/" rel="noopener noreferrer" aria-label="الانتقال إلى بوابة المطورين والشركات على developer.zmrt.online">
+          <div class="dev-portal-top">
+            <span class="service-icon"><svg aria-hidden="true"><use href="#i-code"/></svg></span>
+            <span class="dev-portal-domain" dir="ltr">developer.zmrt.online</span>
+          </div>
+          <div>
+            <h3>بوابة المطورين والشركات</h3>
+            <p>انطلق مباشرة إلى المنصة الرسمية للمطورين والشركات لاستكشاف أدوات الربط البرمجي والخدمات التقنية الخاصة بمنظومة ZMRT.</p>
+          </div>
+          <div class="dev-portal-footer">
+            <span>الانتقال إلى البوابة الرسمية</span>
+            <span class="dev-portal-arrow"><svg aria-hidden="true"><use href="#i-arrow-up-left"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
     <section class="contact" id="start" aria-labelledby="contact-title"><div class="container"><div class="contact-panel reveal"><div><p class="eyebrow" style="margin-bottom:12px">ZMRT على أندرويد</p><h2 id="contact-title">محادثتك القادمة تبدأ هنا.</h2><p>صوت، وصورة، ولحظات تستحق المشاركة. اكتشف ZMRT على هاتفك.</p></div><button class="button button-primary" data-open-release>تنزيل<svg aria-hidden="true" style="width:19px;height:19px"><use href="#i-download"/></svg></button></div></div></section>
   </main>
-  <footer class="footer"><div class="container"><div class="footer-inner"><div><a class="brand" href="#home" aria-label="ZMRT — العودة إلى الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT</span></a><p class="footer-caption">تواصل. تحدّث. كن أقرب.</p></div><nav class="footer-links" aria-label="روابط التذييل"><a href="/privacy.html">الخصوصية</a><a href="/terms.html">الشروط</a><button data-legal="delete">حذف الحساب</button><button data-legal="support">الدعم</button></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> <bdi>ZMRT</bdi>. جميع الحقوق محفوظة.</p><p class="latin" lang="en" dir="ltr">VOICE. VIDEO. CLOSER TOGETHER.</p></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer-inner"><div><a class="brand" href="#home" aria-label="ZMRT — العودة إلى الرئيسية"><span class="brand-mark"><svg aria-hidden="true"><use href="#i-z"/></svg></span><span class="brand-name" dir="ltr">ZMRT</span></a><p class="footer-caption">تواصل. تحدّث. كن أقرب.</p></div><nav class="footer-links" aria-label="روابط التذييل"><a href="https://developer.zmrt.online/" rel="noopener noreferrer">المطورين والشركات</a><a href="/privacy.html">الخصوصية</a><a href="/terms.html">الشروط</a><button data-legal="delete">حذف الحساب</button><button data-legal="support">الدعم</button></nav></div><div class="footer-bottom"><p>© <span id="year">2026</span> <bdi>ZMRT</bdi>. جميع الحقوق محفوظة.</p><p class="latin" lang="en" dir="ltr">VOICE. VIDEO. CLOSER TOGETHER.</p></div></div></footer>
   <nav class="mobile-dock" aria-label="التنقل للهاتف">
     <a class="dock-link active" href="#home" aria-current="location"><svg aria-hidden="true"><use href="#i-home"/></svg><span>الرئيسية</span></a>
     <a class="dock-link" href="#services"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>المميزات</span></a>
